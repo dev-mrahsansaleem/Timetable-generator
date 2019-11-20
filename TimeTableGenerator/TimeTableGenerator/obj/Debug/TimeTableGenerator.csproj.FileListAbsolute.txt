@@ -1,0 +1,1 @@
+E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.exe.config
