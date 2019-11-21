@@ -33,12 +33,14 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnMaximze = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.topPanelMover.SuspendLayout();
             this.SuspendLayout();
             // 
             // topPanelMover
             // 
             this.topPanelMover.BackColor = System.Drawing.Color.Maroon;
+            this.topPanelMover.Controls.Add(this.label1);
             this.topPanelMover.Controls.Add(this.btnMinimize);
             this.topPanelMover.Controls.Add(this.btnMaximze);
             this.topPanelMover.Controls.Add(this.btnClose);
@@ -99,6 +101,17 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(551, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(298, 31);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Time Table Generator";
+            // 
             // templateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -115,6 +128,7 @@
             this.Text = "templateForm";
             this.Load += new System.EventHandler(this.templateForm_Load);
             this.topPanelMover.ResumeLayout(false);
+            this.topPanelMover.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -125,5 +139,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnMaximze;
         private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Label label1;
     }
 }

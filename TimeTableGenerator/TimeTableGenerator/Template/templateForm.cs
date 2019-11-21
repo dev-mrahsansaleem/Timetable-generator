@@ -60,6 +60,7 @@ namespace TimeTableGenerator.Template
             else
             {
                 this.WindowState = FormWindowState.Normal;
+                maximized = false;
             }
         }
 
