@@ -17,7 +17,7 @@ namespace TimeTableGenerator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new templateForm());
+            Application.Run(new Time_Table());
         }
     }
 }

@@ -17,3 +17,4 @@ C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\Tim
 C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.csproj.CoreCompileInputs.cache
 C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.exe
 C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.pdb
+E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Time_Table.resources
