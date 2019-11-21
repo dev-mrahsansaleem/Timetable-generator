@@ -38,11 +38,12 @@
             this.CBendTIme = new System.Windows.Forms.ComboBox();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.inputPanel = new System.Windows.Forms.Panel();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DGVoutputData = new System.Windows.Forms.DataGridView();
             this.DGVinputData = new System.Windows.Forms.DataGridView();
-            this.btnshowData = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.inputPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVoutputData)).BeginInit();
@@ -224,7 +225,7 @@
             this.btnGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerate.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGenerate.Location = new System.Drawing.Point(115, 510);
+            this.btnGenerate.Location = new System.Drawing.Point(247, 429);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(212, 58);
             this.btnGenerate.TabIndex = 9;
@@ -235,7 +236,6 @@
             // 
             this.inputPanel.AutoSize = true;
             this.inputPanel.Controls.Add(this.btnInsert);
-            this.inputPanel.Controls.Add(this.btnshowData);
             this.inputPanel.Controls.Add(this.CBnumberOfRooms);
             this.inputPanel.Controls.Add(this.btnGenerate);
             this.inputPanel.Controls.Add(this.label1);
@@ -249,6 +249,21 @@
             this.inputPanel.Name = "inputPanel";
             this.inputPanel.Size = new System.Drawing.Size(476, 580);
             this.inputPanel.TabIndex = 10;
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.BackColor = System.Drawing.Color.DarkRed;
+            this.btnInsert.FlatAppearance.BorderSize = 0;
+            this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnInsert.Location = new System.Drawing.Point(12, 429);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(212, 58);
+            this.btnInsert.TabIndex = 11;
+            this.btnInsert.Text = "Insert Class";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // panel1
             // 
@@ -272,43 +287,29 @@
             // 
             // DGVinputData
             // 
-            this.DGVinputData.BackgroundColor = System.Drawing.Color.DimGray;
+            this.DGVinputData.BackgroundColor = System.Drawing.Color.Black;
             this.DGVinputData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVinputData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Delete,
+            this.Edit});
             this.DGVinputData.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DGVinputData.GridColor = System.Drawing.Color.Maroon;
             this.DGVinputData.Location = new System.Drawing.Point(0, 0);
             this.DGVinputData.Name = "DGVinputData";
             this.DGVinputData.Size = new System.Drawing.Size(918, 292);
             this.DGVinputData.TabIndex = 0;
             // 
-            // btnshowData
+            // Delete
             // 
-            this.btnshowData.BackColor = System.Drawing.Color.DarkRed;
-            this.btnshowData.FlatAppearance.BorderSize = 0;
-            this.btnshowData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnshowData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnshowData.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnshowData.Location = new System.Drawing.Point(247, 429);
-            this.btnshowData.Name = "btnshowData";
-            this.btnshowData.Size = new System.Drawing.Size(212, 58);
-            this.btnshowData.TabIndex = 10;
-            this.btnshowData.Text = "Show Data";
-            this.btnshowData.UseVisualStyleBackColor = false;
-            this.btnshowData.Click += new System.EventHandler(this.btnshowData_Click);
+            this.Delete.Frozen = true;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
             // 
-            // btnInsert
+            // Edit
             // 
-            this.btnInsert.BackColor = System.Drawing.Color.DarkRed;
-            this.btnInsert.FlatAppearance.BorderSize = 0;
-            this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnInsert.Location = new System.Drawing.Point(12, 429);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(212, 58);
-            this.btnInsert.TabIndex = 11;
-            this.btnInsert.Text = "Insert Class";
-            this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            this.Edit.Frozen = true;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
             // 
             // Time_Table
             // 
@@ -346,7 +347,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DGVoutputData;
         private System.Windows.Forms.DataGridView DGVinputData;
-        private System.Windows.Forms.Button btnshowData;
         private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
     }
 }

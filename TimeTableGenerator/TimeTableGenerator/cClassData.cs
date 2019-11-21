@@ -6,10 +6,49 @@ using System.Threading.Tasks;
 
 namespace TimeTableGenerator
 {
-    class cClassData
+    public class cClassData
     {
-        public string className;
-        public int startTime;
-        public int endTime;
+        private string className;
+        private int startTime;
+        private int endTime;
+
+        public string ClassName
+        {
+            get
+            {
+                return className;
+            }
+
+            set
+            {
+                className = value;
+            }
+        }
+
+        public int StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+
+            set
+            {
+                startTime = value;
+            }
+        }
+
+        public int EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+
+            set
+            {
+                endTime = value;
+            }
+        }
     }
 }

@@ -13,11 +13,18 @@ namespace TimeTableGenerator
 {
     public partial class Time_Table : templateForm
     {
-        private int numberOfRooms = 1;
+        //private int numberOfRooms = 1;
         private string classN = "";
         private int startT = 0;
         private int endT = 24;
         private List<cClassData> classStore = new List<cClassData>();
+        private void showAllClass()
+        {
+            //BindingSource source = new BindingSource();
+            //source.DataSource = classStore;
+            DGVinputData.DataSource = "";
+            DGVinputData.DataSource = classStore;
+        }
         public Time_Table()
         {
             InitializeComponent();
@@ -39,26 +46,23 @@ namespace TimeTableGenerator
                 MessageBox.Show("start time can't be empty", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            classN = TBclassName.Text;
             cClassData mydata = new cClassData();
-            if(TBclassName.Text.Trim()!="")
+            if(classN!="")
             {
-                mydata.className = TBclassName.Text;
-                mydata.startTime = startT;
-                mydata.endTime = endT;
+                mydata.ClassName = classN;
+                mydata.StartTime = startT;
+                mydata.EndTime = endT;
             }
             else
             {
                 MessageBox.Show("class name can't be empty", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             classStore.Add(mydata);
-        }
-
-        private void btnshowData_Click(object sender, EventArgs e)
-        {
-
+            TBclassName.Text = CBendTIme.Text = CBstartTime.Text = "";  //reset data
+            showAllClass();
         }
     }
 }
