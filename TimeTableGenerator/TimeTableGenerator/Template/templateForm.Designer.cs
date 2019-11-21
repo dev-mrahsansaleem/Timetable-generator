@@ -31,12 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(templateForm));
             this.topPanelMover = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnMaximze = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.topPanelMover.SuspendLayout();
             this.SuspendLayout();
             // 
             // topPanelMover
             // 
             this.topPanelMover.BackColor = System.Drawing.Color.Maroon;
+            this.topPanelMover.Controls.Add(this.btnMinimize);
+            this.topPanelMover.Controls.Add(this.btnMaximze);
             this.topPanelMover.Controls.Add(this.btnClose);
             this.topPanelMover.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanelMover.Location = new System.Drawing.Point(0, 0);
@@ -52,6 +56,7 @@
             this.btnClose.BackColor = System.Drawing.Color.Black;
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.SystemColors.Control;
             this.btnClose.Location = new System.Drawing.Point(1350, 0);
@@ -62,9 +67,41 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnMaximze
+            // 
+            this.btnMaximze.BackColor = System.Drawing.Color.Black;
+            this.btnMaximze.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMaximze.FlatAppearance.BorderSize = 0;
+            this.btnMaximze.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMaximze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximze.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnMaximze.Location = new System.Drawing.Point(1300, 0);
+            this.btnMaximze.Name = "btnMaximze";
+            this.btnMaximze.Size = new System.Drawing.Size(50, 50);
+            this.btnMaximze.TabIndex = 1;
+            this.btnMaximze.Text = "^";
+            this.btnMaximze.UseVisualStyleBackColor = false;
+            this.btnMaximze.Click += new System.EventHandler(this.btnMaximze_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.Black;
+            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnMinimize.Location = new System.Drawing.Point(1250, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(50, 50);
+            this.btnMinimize.TabIndex = 2;
+            this.btnMinimize.Text = "-";
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
             // templateForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1400, 630);
@@ -76,6 +113,7 @@
             this.Name = "templateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "templateForm";
+            this.Load += new System.EventHandler(this.templateForm_Load);
             this.topPanelMover.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -85,5 +123,7 @@
 
         private System.Windows.Forms.Panel topPanelMover;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnMaximze;
+        private System.Windows.Forms.Button btnMinimize;
     }
 }
