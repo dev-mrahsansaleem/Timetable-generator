@@ -64,5 +64,11 @@ namespace TimeTableGenerator
             TBclassName.Text = CBendTIme.Text = CBstartTime.Text = "";  //reset data
             showAllClass();
         }
+
+        private void DGVinputData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            classStore.RemoveAt(e.RowIndex);
+            showAllClass();
+        }
     }
 }

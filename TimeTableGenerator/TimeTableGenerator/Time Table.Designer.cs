@@ -293,23 +293,28 @@
             this.Delete,
             this.Edit});
             this.DGVinputData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DGVinputData.GridColor = System.Drawing.Color.Maroon;
+            this.DGVinputData.GridColor = System.Drawing.Color.Black;
             this.DGVinputData.Location = new System.Drawing.Point(0, 0);
             this.DGVinputData.Name = "DGVinputData";
             this.DGVinputData.Size = new System.Drawing.Size(918, 292);
             this.DGVinputData.TabIndex = 0;
+            this.DGVinputData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVinputData_CellContentClick);
             // 
             // Delete
             // 
             this.Delete.Frozen = true;
             this.Delete.HeaderText = "Delete";
             this.Delete.Name = "Delete";
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // Edit
             // 
             this.Edit.Frozen = true;
             this.Edit.HeaderText = "Edit";
             this.Edit.Name = "Edit";
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
             // 
             // Time_Table
             // 
