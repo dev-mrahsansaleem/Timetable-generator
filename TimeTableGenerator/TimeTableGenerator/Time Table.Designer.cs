@@ -87,6 +87,7 @@
             this.label1.Size = new System.Drawing.Size(190, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Number of Rooms:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -270,7 +271,7 @@
             this.panel1.Controls.Add(this.DGVoutputData);
             this.panel1.Controls.Add(this.DGVinputData);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(482, 50);
+            this.panel1.Location = new System.Drawing.Point(468, 50);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(918, 580);
             this.panel1.TabIndex = 11;
@@ -320,7 +321,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 630);
+            this.ClientSize = new System.Drawing.Size(1386, 630);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.inputPanel);
             this.Name = "Time_Table";
