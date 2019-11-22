@@ -48,7 +48,6 @@ namespace TimeTableGenerator
         }
 
 
-
         public Time_Table()
         {
             InitializeComponent();
