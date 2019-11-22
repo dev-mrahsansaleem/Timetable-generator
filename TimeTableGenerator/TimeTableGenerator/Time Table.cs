@@ -40,10 +40,15 @@ namespace TimeTableGenerator
                 }
             }
         }
+
+
         private void showonG(List<cClassData> l,int n)
         {
             sort(l);
         }
+
+
+
         public Time_Table()
         {
             InitializeComponent();
