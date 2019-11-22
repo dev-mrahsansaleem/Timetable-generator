@@ -86,8 +86,23 @@ namespace TimeTableGenerator
 
         private void DGVinputData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            classStore.RemoveAt(e.RowIndex);
-            showAllClass();
+            if(classStore.Count > 0)
+            {
+                if(e.ColumnIndex==0)        //delete button on DGV
+                {
+                    classStore.RemoveAt(e.RowIndex);
+                    showAllClass();
+                }
+                else if(e.ColumnIndex==1)   //edit button on DGV
+                {
+                    //edit form
+                }
+            }
+            else
+            {
+                MessageBox.Show("nothing to delete or edit", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
