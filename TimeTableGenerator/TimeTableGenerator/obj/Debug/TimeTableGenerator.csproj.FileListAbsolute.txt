@@ -7,3 +7,6 @@ E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\bin\Debug\T
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.pdb
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.exe
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.pdb
+C:\Users\CODER-PC\Desktop\aneeza\Timetable-generator\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.exe.config
+C:\Users\CODER-PC\Desktop\aneeza\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.exe
+C:\Users\CODER-PC\Desktop\aneeza\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.pdb
