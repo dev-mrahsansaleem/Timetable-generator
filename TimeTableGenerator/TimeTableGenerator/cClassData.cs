@@ -11,10 +11,14 @@ namespace TimeTableGenerator
         private string className;
         private int startTime;
         private int endTime;
-        //cClassData(string className,int start )
-       // {
-
-        //}
+        private string roomNo;
+        public cClassData()
+        {
+            ClassName = "";
+            startTime = 0;
+            endTime = 0;
+            roomNo = "no assign";
+        }
 
         public string ClassName
         {
