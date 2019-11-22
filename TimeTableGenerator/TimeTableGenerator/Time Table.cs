@@ -20,8 +20,6 @@ namespace TimeTableGenerator
         private List<cClassData> classStore = new List<cClassData>();
         private void showAllClass()
         {
-            //BindingSource source = new BindingSource();
-            //source.DataSource = classStore;
             DGVinputData.DataSource = "";
             DGVinputData.DataSource = classStore;
         }
@@ -100,6 +98,8 @@ namespace TimeTableGenerator
                 else if(e.ColumnIndex==1)   //edit button on DGV
                 {
                     //edit form
+                    sort(classStore);
+                    showAllClass();
                 }
             }
             else
@@ -107,11 +107,6 @@ namespace TimeTableGenerator
                 MessageBox.Show("nothing to delete or edit", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
