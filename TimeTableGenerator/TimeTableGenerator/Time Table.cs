@@ -25,6 +25,25 @@ namespace TimeTableGenerator
             DGVinputData.DataSource = "";
             DGVinputData.DataSource = classStore;
         }
+        private void sort(List <cClassData> ll)
+        {
+            for (int j= 0; j < ll.Count; j++)
+            {
+                for (int i = j + 1; i < ll.Count; i++)
+                {
+                    if (ll[i].EndTime<=ll[i-1].EndTime)
+                    {
+                        cClassData temp = ll[i];
+                        ll[i] = ll[i -1];
+                        ll[i-1] = temp;
+                    }
+                }
+            }
+        }
+        private void showonG(List<cClassData> l,int n)
+        {
+            sort(l);
+        }
         public Time_Table()
         {
             InitializeComponent();
@@ -84,6 +103,11 @@ namespace TimeTableGenerator
                 MessageBox.Show("nothing to delete or edit", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
