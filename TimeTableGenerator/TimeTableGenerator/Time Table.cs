@@ -23,6 +23,7 @@ namespace TimeTableGenerator
             DGVinputData.DataSource = "";
             DGVinputData.DataSource = classStore;
         }
+
         private void sort(List <cClassData> ll)
         {
             for (int j= 0; j < ll.Count; j++)
@@ -98,6 +99,7 @@ namespace TimeTableGenerator
                 else if(e.ColumnIndex==1)   //edit button on DGV
                 {
                     //edit form
+                    showAllClass();
                     sort(classStore);
                     showAllClass();
                 }
