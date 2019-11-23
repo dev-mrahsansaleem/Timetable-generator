@@ -58,5 +58,19 @@ namespace TimeTableGenerator
                 endTime = value;
             }
         }
+
+        public string RoomNo
+        {
+            get
+            {
+                return roomNo;
+            }
+            set
+            {
+                roomNo = value;
+            }
+        }
     }
+      
+ 
 }

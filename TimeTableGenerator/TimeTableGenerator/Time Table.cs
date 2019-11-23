@@ -17,6 +17,7 @@ namespace TimeTableGenerator
         private string classN = "";
         private int startT = 0;
         private int endT = 24;
+        private string roomNo = "1";
         private List<cClassData> classStore = new List<cClassData>();
         private void showAllClass()
         {
@@ -40,10 +41,28 @@ namespace TimeTableGenerator
             }
         }
 
-
-        private void showonG(List<cClassData> l,int n)
+        private void GenerateOptimalSelectedClass(List<cClassData> allClasses,int n)
         {
-            sort(l);
+            sortByEndTime(allClasses);
+            int i, j;
+            //first class will always be selected
+            i = 0;
+            allClasses[i].RoomNo = roomNo;
+
+            for (j = 1; j < n; j++)
+            {
+                if(allClasses[j].StartTime>=allClasses[i].EndTime)
+                {
+                    allClasses[j].RoomNo = roomNo;
+                    i = j;
+                }
+            }
+
+
+
+            
+            
+            
         }
 
 
@@ -97,11 +116,10 @@ namespace TimeTableGenerator
                     showAllClass();
                 }
                 else if(e.ColumnIndex==1)   //edit button on DGV
-                {
-                    //edit form
-                    showAllClass();
-                    sort(classStore);
-                    showAllClass();
+                { 
+                    //showAllClass();
+                    //sort(classStore);
+                    //showAllClass();
                 }
             }
             else
