@@ -19,7 +19,7 @@ namespace TimeTableGenerator
         private int endT = 24;
         private string roomNo = "1";
         private List<cClassData> classStore = new List<cClassData>();
-        private void showAllClass()
+        private void showInputClass()
         {
             DGVinputData.DataSource = "";
             DGVinputData.DataSource = classStore;
@@ -57,11 +57,6 @@ namespace TimeTableGenerator
                     i = j;
                 }
             }
-
-
-
-            
-            
             
         }
 
@@ -102,8 +97,13 @@ namespace TimeTableGenerator
                 MessageBox.Show("class name can't be empty", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             classStore.Add(mydata);
-            TBclassName.Text = CBendTIme.Text = CBstartTime.Text = "";  //reset data
-            showAllClass();
+            //reset data
+            TBclassName.Text = CBendTIme.Text = CBstartTime.Text = "";
+            classN = "";
+            startT = 0;
+            endT = 24;
+            //show all data updated
+            showInputClass();
         }
 
         private void DGVinputData_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -113,7 +113,7 @@ namespace TimeTableGenerator
                 if(e.ColumnIndex==0)        //delete button on DGV
                 {
                     classStore.RemoveAt(e.RowIndex);
-                    showAllClass();
+                    showInputClass();
                 }
                 else if(e.ColumnIndex==1)   //edit button on DGV
                 { 
