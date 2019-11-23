@@ -231,6 +231,7 @@
             this.btnGenerate.TabIndex = 9;
             this.btnGenerate.Text = "Generate Optimal";
             this.btnGenerate.UseVisualStyleBackColor = false;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // inputPanel
             // 

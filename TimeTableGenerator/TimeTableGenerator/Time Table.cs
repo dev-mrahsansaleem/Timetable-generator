@@ -24,7 +24,11 @@ namespace TimeTableGenerator
             DGVinputData.DataSource = "";
             DGVinputData.DataSource = classStore;
         }
-
+        private void showOutputClass()
+        {
+            DGVoutputData.DataSource = "";
+            DGVoutputData.DataSource = classStore;
+        }
         private void sortByEndTime(List <cClassData> listofClass)
         {
             for (int j= 0; j < listofClass.Count; j++)
@@ -127,6 +131,12 @@ namespace TimeTableGenerator
                 MessageBox.Show("nothing to delete or edit", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            GenerateOptimalSelectedClass(classStore, classStore.Count);
+            showOutputClass();
         }
     }
 }
