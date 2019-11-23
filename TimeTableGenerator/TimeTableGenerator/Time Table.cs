@@ -24,17 +24,17 @@ namespace TimeTableGenerator
             DGVinputData.DataSource = classStore;
         }
 
-        private void sort(List <cClassData> ll)
+        private void sortByEndTime(List <cClassData> listofClass)
         {
-            for (int j= 0; j < ll.Count; j++)
+            for (int j= 0; j < listofClass.Count; j++)
             {
-                for (int i = j + 1; i < ll.Count; i++)
+                for (int i = j + 1; i < listofClass.Count; i++)
                 {
-                    if (ll[i].EndTime<=ll[i-1].EndTime)
+                    if (listofClass[i].EndTime<=listofClass[i-1].EndTime)
                     {
-                        cClassData temp = ll[i];
-                        ll[i] = ll[i -1];
-                        ll[i-1] = temp;
+                        cClassData temp = listofClass[i];
+                        listofClass[i] = listofClass[i -1];
+                        listofClass[i-1] = temp;
                     }
                 }
             }
