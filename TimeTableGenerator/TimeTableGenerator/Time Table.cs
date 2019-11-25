@@ -17,7 +17,7 @@ namespace TimeTableGenerator
         private string classN = "";
         private int startT = 0;
         private int endT = 24;
-        private string roomNo = "1";
+        private string roomNo = "";
         private List<cClassData> classStore = new List<cClassData>();
         private void showInputClass()
         {
@@ -57,14 +57,18 @@ namespace TimeTableGenerator
             {
                 if(allClasses[j].StartTime>=allClasses[i].EndTime)
                 {
+                    roomNo = "1";
                     allClasses[j].RoomNo = roomNo;
                     i = j;
+                }
+                else 
+                {
+                    roomNo = "2";
+                    allClasses[j].RoomNo = roomNo;
                 }
             }
             
         }
-
-
         public Time_Table()
         {
             InitializeComponent();
