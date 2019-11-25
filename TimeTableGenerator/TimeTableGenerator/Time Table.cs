@@ -68,7 +68,7 @@ namespace TimeTableGenerator
         {
             sortByEndTime(allClasses);
             int i, j;
-            //first class will always be selected
+            //selet the multiple classes
             i = 0;
             allClasses[i].RoomNo = roomNo;
             for (j = 1; j < n; j++)
