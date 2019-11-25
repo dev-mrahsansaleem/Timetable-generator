@@ -66,7 +66,7 @@ namespace TimeTableGenerator
 
         private void GenerateOptimalmultipleClass(List<cClassData> allClasses, int n)
         {
-            while (roomNo<=)
+            while (roomNo<= txtroomNo.text)
             sortByEndTime(allClasses);
             int i, j;
             //select the multiple classes
