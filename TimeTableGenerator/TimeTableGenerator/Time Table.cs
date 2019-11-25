@@ -66,9 +66,10 @@ namespace TimeTableGenerator
 
         private void GenerateOptimalmultipleClass(List<cClassData> allClasses, int n)
         {
+            while (roomNo<=)
             sortByEndTime(allClasses);
             int i, j;
-            //selet the multiple classes
+            //select the multiple classes
             i = 0;
             allClasses[i].RoomNo = roomNo;
             for (j = 1; j < n; j++)
