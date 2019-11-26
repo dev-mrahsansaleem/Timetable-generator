@@ -74,7 +74,6 @@ namespace TimeTableGenerator
 
         private void GenerateOptimalmultipleClass(List<cClassData> allClasses, int n)
         {
-            while (roomNo<= txtroomNo.text)
             sortByEndTime(allClasses);
             int i, j;
             //select the multiple classes
@@ -116,24 +115,26 @@ namespace TimeTableGenerator
         {
             classN = TBclassName.Text;
             cClassData mydata = new cClassData();
-            if(classN!="")
+            if(classN == "")
+            {
+                MessageBox.Show("class name can't be empty", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //classN = TBclassName.Text;
+            }
+            else
             {
                 mydata.ClassName = classN;
                 mydata.StartTime = startT;
                 mydata.EndTime = endT;
+                classStore.Add(mydata);
+                //reset data
+                TBclassName.Text = CBendTIme.Text = CBstartTime.Text = "";
+                classN = "";
+                startT = 0;
+                endT = 24;
+                //show all data updated
+                showInputClass();
+
             }
-            else
-            {
-                MessageBox.Show("class name can't be empty", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            classStore.Add(mydata);
-            //reset data
-            TBclassName.Text = CBendTIme.Text = CBstartTime.Text = "";
-            classN = "";
-            startT = 0;
-            endT = 24;
-            //show all data updated
-            showInputClass();
         }
 
         private void DGVinputData_CellContentClick(object sender, DataGridViewCellEventArgs e)
