@@ -63,9 +63,12 @@ namespace TimeTableGenerator
                 }
                 else 
                 {
-                    roomNo = "2";
-                    allClasses[j].RoomNo = roomNo;
-                       
+                    int result = Int32.Parse(roomNo);
+                    allClasses[j].RoomNo = result++;
+                    if(result+1>=24)
+                    {
+                        allClasses[j].RoomNo = result++ ;
+                    }
                     }
                 }
             }
