@@ -48,7 +48,7 @@ namespace TimeTableGenerator
         private void GenerateOptimalSelectedClass(List<cClassData> allClasses,int n)
         {
             sortByEndTime(allClasses);
-            int i, j;
+            int i,j ;
             //first class will always be selected
             i = 0;
             allClasses[i].RoomNo = roomNo;
@@ -65,10 +65,32 @@ namespace TimeTableGenerator
                 {
                     roomNo = "2";
                     allClasses[j].RoomNo = roomNo;
+                       
+                    }
                 }
             }
             
         }
+
+        private void GenerateOptimalmultipleClass(List<cClassData> allClasses, int n)
+        {
+            while (roomNo<= txtroomNo.text)
+            sortByEndTime(allClasses);
+            int i, j;
+            //select the multiple classes
+            i = 0;
+            allClasses[i].RoomNo = roomNo;
+            for (j = 1; j < n; j++)
+            {
+                if (allClasses[j].StartTime >= allClasses[i].EndTime)
+                {
+                    allClasses[j].RoomNo = roomNo;
+                    i = j;
+                }
+            }
+
+        }
+>>>>>>> 30401d07113b6857326254abb4373c8886da372c
         public Time_Table()
         {
             InitializeComponent();
