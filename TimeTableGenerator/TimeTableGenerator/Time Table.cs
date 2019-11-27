@@ -142,7 +142,7 @@ namespace TimeTableGenerator
                 }
        
             {
-                if (txtNumberofrooms = '')
+                if (txtNumberofrooms.Text=)
                 {
                     MessageBox.Show("invalid text", "invald", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -210,6 +210,11 @@ namespace TimeTableGenerator
         {
             GenerateOptimalSelectedClass(classStore);
             showOutputClass();
+        }
+
+        private void txtNumberofrooms_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
