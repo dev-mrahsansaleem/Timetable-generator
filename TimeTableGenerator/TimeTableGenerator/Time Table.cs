@@ -13,11 +13,11 @@ namespace TimeTableGenerator
 {
     public partial class Time_Table : templateForm
     {
-        //private int numberOfRooms = 1;
+        private int numberOfRooms = 1;
         private string classN = "";
         private int startT = 0;
         private int endT = 24;
-        private string roomNo = "";
+        private int roomNo = 1;
         private List<cClassData> classStore = new List<cClassData>();
         private void showInputClass()
         {
@@ -47,52 +47,38 @@ namespace TimeTableGenerator
 
         private void GenerateOptimalSelectedClass(List<cClassData> allClasses,int n)
         {
+            roomNo = 1;
             sortByEndTime(allClasses);
-            int i,j ;
-            //first class will always be selected
-            i = 0;
-            allClasses[i].RoomNo = roomNo;
-
-            for (j = 1; j < n; j++)
+            while(roomNo<numberOfRooms)
             {
-                if(allClasses[j].StartTime>=allClasses[i].EndTime)
+                //select 1st non assign room after sorting
+                foreach (cClassData x in classStore)
                 {
-                    roomNo = "1";
-                    allClasses[j].RoomNo = roomNo;
-                    i = j;
-                }
-                else 
-                {
-                    int result = Int32.Parse(roomNo);
-                    allClasses[j].RoomNo = result++;
-                    if(result+1>=24)
+                    if (x.RoomNo == "no assign")
                     {
-                        allClasses[j].RoomNo = result++ ;
-                    }
+                        x.RoomNo = roomNo.ToString();
+                        break;
                     }
                 }
+                //^^^^select 1st non assign room after sorting^^^^
+
+                int i,j;
+                i = 0;
+                for (j = 1; j < n; j++)
+                {
+                    if(allClasses[j].StartTime>=allClasses[i].EndTime && allClasses[j].RoomNo == "no assign")
+                    {
+                        allClasses[j].RoomNo = roomNo.ToString();
+                        i = j;
+                    }
+                }
+                roomNo++;
             }
+            
+            
             
         }
 
-        private void GenerateOptimalmultipleClass(List<cClassData> allClasses, int n)
-        {
-            sortByEndTime(allClasses);
-            int i, j;
-            //select the multiple classes
-            i = 0;
-            allClasses[i].RoomNo = roomNo;
-            for (j = 1; j < n; j++)
-            {
-                if (allClasses[j].StartTime >= allClasses[i].EndTime)
-                {
-                    allClasses[j].RoomNo = roomNo;
-                    i = j;
-                }
-            }
-
-        }
->>>>>>> 30401d07113b6857326254abb4373c8886da372c
         public Time_Table()
         {
             InitializeComponent();
@@ -116,6 +102,15 @@ namespace TimeTableGenerator
         }
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            if (CBnumberOfRooms.Text != "")
+            {
+                numberOfRooms = Convert.ToInt32(CBnumberOfRooms.Text);
+            }
+                
+            else
+                MessageBox.Show("number of rooms can't be empty", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
             classN = TBclassName.Text;
             cClassData mydata = new cClassData();
             if(classN == "")
@@ -167,6 +162,11 @@ namespace TimeTableGenerator
         {
             GenerateOptimalSelectedClass(classStore, classStore.Count);
             showOutputClass();
+        }
+
+        private void CBnumberOfRooms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

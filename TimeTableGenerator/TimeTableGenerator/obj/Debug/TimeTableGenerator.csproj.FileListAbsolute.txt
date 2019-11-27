@@ -11,18 +11,6 @@ C:\Users\CODER-PC\Desktop\aneeza\Timetable-generator\TimeTableGenerator\TimeTabl
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.exe.config
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.exe
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.pdb
-<<<<<<< HEAD
-C:\Users\HAIER\Documents\github\Timetable-generator\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.exe.config
-C:\Users\HAIER\Documents\github\Timetable-generator\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.exe
-C:\Users\HAIER\Documents\github\Timetable-generator\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.pdb
-C:\Users\HAIER\Documents\github\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.csprojAssemblyReference.cache
-C:\Users\HAIER\Documents\github\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Properties.Resources.resources
-C:\Users\HAIER\Documents\github\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Template.templateForm.resources
-C:\Users\HAIER\Documents\github\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Time_Table.resources
-C:\Users\HAIER\Documents\github\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.csproj.GenerateResource.cache
-C:\Users\HAIER\Documents\github\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.exe
-C:\Users\HAIER\Documents\github\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.pdb
-=======
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.exe
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.pdb
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.csprojResolveAssemblyReference.cache
@@ -30,4 +18,3 @@ E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\T
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Template.templateForm.resources
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Time_Table.resources
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.csproj.GenerateResource.Cache
->>>>>>> 30401d07113b6857326254abb4373c8886da372c

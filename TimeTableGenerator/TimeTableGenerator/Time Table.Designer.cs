@@ -75,6 +75,7 @@
             this.CBnumberOfRooms.Name = "CBnumberOfRooms";
             this.CBnumberOfRooms.Size = new System.Drawing.Size(190, 33);
             this.CBnumberOfRooms.TabIndex = 1;
+            this.CBnumberOfRooms.SelectedIndexChanged += new System.EventHandler(this.CBnumberOfRooms_SelectedIndexChanged);
             // 
             // label1
             // 
