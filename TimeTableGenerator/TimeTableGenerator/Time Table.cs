@@ -85,30 +85,37 @@ namespace TimeTableGenerator
         }
         public void btnInsert_Click(object sender, EventArgs e)
         {
-            maxRoomCap = Convert.ToInt32(txtNumberofrooms.Text);//max rooms
-            txtNumberofrooms.ReadOnly = true; //after 1st insertion make readonly can't be change later
-            txtNumberofrooms.BackColor = Color.DimGray;
-            //read data
-            className = TBclassName.Text;
-            startTime = Convert.ToInt32(CBstartTime.Text);
-            endTime = Convert.ToInt32(CBendTime.Text);
+            if (classStore.Count > 0)
+            {
+                maxRoomCap = Convert.ToInt32(txtNumberofrooms.Text);//max rooms
+                txtNumberofrooms.ReadOnly = true; //after 1st insertion make readonly can't be change later
+                txtNumberofrooms.BackColor = Color.DimGray;
+                //read data
+                className = TBclassName.Text;
+                startTime = Convert.ToInt32(CBstartTime.Text);
+                endTime = Convert.ToInt32(CBendTime.Text);
 
-            cClassData mydata = new cClassData();//create a object
-            mydata.ClassName = className;
-            mydata.StartTime = startTime;
-            mydata.EndTime = endTime;
-            //add new data object (new class) in to classStore
-            classStore.Add(mydata);
+                cClassData mydata = new cClassData();//create a object
+                mydata.ClassName = className;
+                mydata.StartTime = startTime;
+                mydata.EndTime = endTime;
+                //add new data object (new class) in to classStore
+                classStore.Add(mydata);
 
-            //reset GUI data input fields
-            CBstartTime.Text = "";
-            CBendTime.Text = "";
-            TBclassName.Text = "";
-            className = "";
-            startTime = 0;
-            endTime = 24;
-            //whole data on datagrid view
-            showInputClass();
+                //reset GUI data input fields
+                CBstartTime.Text = "";
+                CBendTime.Text = "";
+                TBclassName.Text = "";
+                className = "";
+                startTime = 0;
+                endTime = 24;
+                //whole data on datagrid view
+                showInputClass();
+            }
+            else
+            {
+                MessageBox.Show("nothing to insert", "pleas enter the data and then process further", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void DGVinputData_CellContentClick(object sender, DataGridViewCellEventArgs e)
