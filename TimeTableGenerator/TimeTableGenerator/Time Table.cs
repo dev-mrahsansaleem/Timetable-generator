@@ -13,12 +13,14 @@ namespace TimeTableGenerator
 {
     public partial class Time_Table : templateForm
     {
-        private int numberOfRooms = 1;
-        private string classN = "";
-        private int startT = 0;
-        private int endT = 24;
-        private int roomNo = 1;
+        private int maxRoomCap = -1;
+        private string className = "";
+        private int startTime = 0;
+        private int endTime = 24;
+        private int currentRoomNo = 1;
         private List<cClassData> classStore = new List<cClassData>();
+        
+
         private void showInputClass()
         {
             DGVinputData.DataSource = "";
@@ -26,113 +28,87 @@ namespace TimeTableGenerator
         }
         private void showOutputClass()
         {
+            classStore = classStore.OrderBy(o => o.RoomNo).ToList();
             DGVoutputData.DataSource = "";
             DGVoutputData.DataSource = classStore;
         }
-        private void sortByEndTime(List <cClassData> listofClass)
+        private void sortByEndTime(List <cClassData> pClassStore)
         {
-            for (int j= 0; j < listofClass.Count; j++)
+            for (int j= 0; j < pClassStore.Count; j++)
             {
-                for (int i = j + 1; i < listofClass.Count; i++)
+                for (int i = j + 1; i < pClassStore.Count; i++)
                 {
-                    if (listofClass[i].EndTime<=listofClass[i-1].EndTime)
+                    if (pClassStore[i].EndTime<=pClassStore[i-1].EndTime)
                     {
-                        cClassData temp = listofClass[i];
-                        listofClass[i] = listofClass[i -1];
-                        listofClass[i-1] = temp;
+                        cClassData temp = pClassStore[i];
+                        pClassStore[i] = pClassStore[i -1];
+                        pClassStore[i-1] = temp;
                     }
                 }
             }
         }
 
-        private void GenerateOptimalSelectedClass(List<cClassData> allClasses,int n)
+        private void GenerateOptimalSelectedClass(List<cClassData> pClassStore)
         {
-            roomNo = 1;
-            sortByEndTime(allClasses);
-            while(roomNo<numberOfRooms)
+            currentRoomNo = 1;
+            sortByEndTime(pClassStore);
+            while(currentRoomNo<maxRoomCap)
             {
-                //select 1st non assign room after sorting
+                //select 1st non assigned room after sorting
                 foreach (cClassData x in classStore)
                 {
                     if (x.RoomNo == "no assign")
                     {
-                        x.RoomNo = roomNo.ToString();
+                        x.RoomNo = currentRoomNo.ToString();
                         break;
                     }
                 }
-                //^^^^select 1st non assign room after sorting^^^^
+                //^^^^select 1st non assigned room after sorting^^^^
 
                 int i,j;
                 i = 0;
-                for (j = 1; j < n; j++)
+                for (j = 1; j < pClassStore.Count; j++)
                 {
-                    if(allClasses[j].StartTime>=allClasses[i].EndTime && allClasses[j].RoomNo == "no assign")
+                    if(pClassStore[j].StartTime>=pClassStore[i].EndTime && pClassStore[j].RoomNo == "no assign")
                     {
-                        allClasses[j].RoomNo = roomNo.ToString();
+                        pClassStore[j].RoomNo = currentRoomNo.ToString();
                         i = j;
                     }
                 }
-                roomNo++;
-            }
-            
-            
-            
+                currentRoomNo++;
+            }            
         }
 
         public Time_Table()
         {
             InitializeComponent();
         }
-        private void CBstartTime_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            startT = System.Convert.ToInt32(CBstartTime.Text);
-            if (startT>=endT)
-            {
-                MessageBox.Show("start time can't be empty", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void CBendTIme_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            endT = System.Convert.ToInt32(CBendTIme.Text);
-            if (startT>=endT)
-            {
-                MessageBox.Show("start time can't be empty", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            if (CBnumberOfRooms.Text != "")
-            {
-                numberOfRooms = Convert.ToInt32(CBnumberOfRooms.Text);
-            }
-                
-            else
-                MessageBox.Show("number of rooms can't be empty", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            maxRoomCap = Convert.ToInt32(txtNumberofrooms.Text);//max rooms
+            txtNumberofrooms.ReadOnly = true; //after 1st insertion make readonly can't be change later
+            txtNumberofrooms.BackColor = Color.DimGray;
+            //read data
+            className = TBclassName.Text;
+            startTime = Convert.ToInt32(CBstartTime.Text);
+            endTime = Convert.ToInt32(CBendTime.Text);
 
+            cClassData mydata = new cClassData();//create a object
+            mydata.ClassName = className;
+            mydata.StartTime = startTime;
+            mydata.EndTime = endTime;
+            //add new data object (new class) in to classStore
+            classStore.Add(mydata);
 
-            classN = TBclassName.Text;
-            cClassData mydata = new cClassData();
-            if(classN == "")
-            {
-                MessageBox.Show("class name can't be empty", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //classN = TBclassName.Text;
-            }
-            else
-            {
-                mydata.ClassName = classN;
-                mydata.StartTime = startT;
-                mydata.EndTime = endT;
-                classStore.Add(mydata);
-                //reset data
-                TBclassName.Text = CBendTIme.Text = CBstartTime.Text = "";
-                classN = "";
-                startT = 0;
-                endT = 24;
-                //show all data updated
-                showInputClass();
-
-            }
+            //reset GUI data input fields
+            CBstartTime.Text = "";
+            CBendTime.Text = "";
+            TBclassName.Text = "";
+            className = "";
+            startTime = 0;
+            endTime = 24;
+            //whole data on datagrid view
+            showInputClass();
         }
 
         private void DGVinputData_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -145,10 +121,9 @@ namespace TimeTableGenerator
                     showInputClass();
                 }
                 else if(e.ColumnIndex==1)   //edit button on DGV
-                { 
-                    //showAllClass();
-                    //sort(classStore);
-                    //showAllClass();
+                {
+                    editForm nform = new editForm(classStore,e.RowIndex);
+                    nform.Show();
                 }
             }
             else
@@ -160,13 +135,8 @@ namespace TimeTableGenerator
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            GenerateOptimalSelectedClass(classStore, classStore.Count);
+            GenerateOptimalSelectedClass(classStore);
             showOutputClass();
-        }
-
-        private void CBnumberOfRooms_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

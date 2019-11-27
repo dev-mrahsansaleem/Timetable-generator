@@ -28,54 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CBnumberOfRooms = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TBclassName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.CBstartTime = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.CBendTIme = new System.Windows.Forms.ComboBox();
+            this.CBendTime = new System.Windows.Forms.ComboBox();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.inputPanel = new System.Windows.Forms.Panel();
+            this.CBstartTime = new System.Windows.Forms.ComboBox();
+            this.txtNumberofrooms = new System.Windows.Forms.TextBox();
             this.btnInsert = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DGVoutputData = new System.Windows.Forms.DataGridView();
             this.DGVinputData = new System.Windows.Forms.DataGridView();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label5 = new System.Windows.Forms.Label();
             this.inputPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVoutputData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVinputData)).BeginInit();
             this.SuspendLayout();
-            // 
-            // CBnumberOfRooms
-            // 
-            this.CBnumberOfRooms.BackColor = System.Drawing.Color.DarkRed;
-            this.CBnumberOfRooms.DropDownHeight = 100;
-            this.CBnumberOfRooms.DropDownWidth = 200;
-            this.CBnumberOfRooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CBnumberOfRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBnumberOfRooms.ForeColor = System.Drawing.Color.White;
-            this.CBnumberOfRooms.FormattingEnabled = true;
-            this.CBnumberOfRooms.IntegralHeight = false;
-            this.CBnumberOfRooms.Items.AddRange(new object[] {
-            "...",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9"});
-            this.CBnumberOfRooms.Location = new System.Drawing.Point(247, 93);
-            this.CBnumberOfRooms.Name = "CBnumberOfRooms";
-            this.CBnumberOfRooms.Size = new System.Drawing.Size(190, 33);
-            this.CBnumberOfRooms.TabIndex = 1;
-            this.CBnumberOfRooms.SelectedIndexChanged += new System.EventHandler(this.CBnumberOfRooms_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -108,7 +82,7 @@
             this.TBclassName.ForeColor = System.Drawing.SystemColors.Control;
             this.TBclassName.Location = new System.Drawing.Point(247, 174);
             this.TBclassName.Name = "TBclassName";
-            this.TBclassName.Size = new System.Drawing.Size(190, 31);
+            this.TBclassName.Size = new System.Drawing.Size(200, 31);
             this.TBclassName.TabIndex = 4;
             // 
             // label3
@@ -122,6 +96,93 @@
             this.label3.Size = new System.Drawing.Size(116, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Start Time:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.DarkRed;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(40, 339);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(103, 25);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "End Time";
+            // 
+            // CBendTime
+            // 
+            this.CBendTime.BackColor = System.Drawing.Color.DarkRed;
+            this.CBendTime.DropDownHeight = 100;
+            this.CBendTime.DropDownWidth = 200;
+            this.CBendTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CBendTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBendTime.ForeColor = System.Drawing.Color.White;
+            this.CBendTime.FormattingEnabled = true;
+            this.CBendTime.IntegralHeight = false;
+            this.CBendTime.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"});
+            this.CBendTime.Location = new System.Drawing.Point(247, 334);
+            this.CBendTime.Name = "CBendTime";
+            this.CBendTime.Size = new System.Drawing.Size(200, 33);
+            this.CBendTime.TabIndex = 7;
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.BackColor = System.Drawing.Color.DarkRed;
+            this.btnGenerate.FlatAppearance.BorderSize = 0;
+            this.btnGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerate.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnGenerate.Location = new System.Drawing.Point(247, 429);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(212, 58);
+            this.btnGenerate.TabIndex = 9;
+            this.btnGenerate.Text = "Generate Optimal";
+            this.btnGenerate.UseVisualStyleBackColor = false;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
+            // inputPanel
+            // 
+            this.inputPanel.AutoSize = true;
+            this.inputPanel.Controls.Add(this.label5);
+            this.inputPanel.Controls.Add(this.CBstartTime);
+            this.inputPanel.Controls.Add(this.txtNumberofrooms);
+            this.inputPanel.Controls.Add(this.btnInsert);
+            this.inputPanel.Controls.Add(this.btnGenerate);
+            this.inputPanel.Controls.Add(this.label1);
+            this.inputPanel.Controls.Add(this.label4);
+            this.inputPanel.Controls.Add(this.label2);
+            this.inputPanel.Controls.Add(this.CBendTime);
+            this.inputPanel.Controls.Add(this.TBclassName);
+            this.inputPanel.Controls.Add(this.label3);
+            this.inputPanel.Location = new System.Drawing.Point(0, 50);
+            this.inputPanel.Name = "inputPanel";
+            this.inputPanel.Size = new System.Drawing.Size(476, 580);
+            this.inputPanel.TabIndex = 10;
             // 
             // CBstartTime
             // 
@@ -159,98 +220,20 @@
             "22",
             "23",
             "24"});
-            this.CBstartTime.Location = new System.Drawing.Point(247, 253);
+            this.CBstartTime.Location = new System.Drawing.Point(247, 259);
             this.CBstartTime.Name = "CBstartTime";
-            this.CBstartTime.Size = new System.Drawing.Size(190, 33);
-            this.CBstartTime.TabIndex = 5;
-            this.CBstartTime.SelectedIndexChanged += new System.EventHandler(this.CBstartTime_SelectedIndexChanged);
+            this.CBstartTime.Size = new System.Drawing.Size(200, 33);
+            this.CBstartTime.TabIndex = 13;
             // 
-            // label4
+            // txtNumberofrooms
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.DarkRed;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(40, 339);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 25);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "End Time";
-            // 
-            // CBendTIme
-            // 
-            this.CBendTIme.BackColor = System.Drawing.Color.DarkRed;
-            this.CBendTIme.DropDownHeight = 100;
-            this.CBendTIme.DropDownWidth = 200;
-            this.CBendTIme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CBendTIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBendTIme.ForeColor = System.Drawing.Color.White;
-            this.CBendTIme.FormattingEnabled = true;
-            this.CBendTIme.IntegralHeight = false;
-            this.CBendTIme.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24"});
-            this.CBendTIme.Location = new System.Drawing.Point(247, 334);
-            this.CBendTIme.Name = "CBendTIme";
-            this.CBendTIme.Size = new System.Drawing.Size(190, 33);
-            this.CBendTIme.TabIndex = 7;
-            this.CBendTIme.SelectedIndexChanged += new System.EventHandler(this.CBendTIme_SelectedIndexChanged);
-            // 
-            // btnGenerate
-            // 
-            this.btnGenerate.BackColor = System.Drawing.Color.DarkRed;
-            this.btnGenerate.FlatAppearance.BorderSize = 0;
-            this.btnGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerate.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGenerate.Location = new System.Drawing.Point(247, 429);
-            this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(212, 58);
-            this.btnGenerate.TabIndex = 9;
-            this.btnGenerate.Text = "Generate Optimal";
-            this.btnGenerate.UseVisualStyleBackColor = false;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
-            // 
-            // inputPanel
-            // 
-            this.inputPanel.AutoSize = true;
-            this.inputPanel.Controls.Add(this.btnInsert);
-            this.inputPanel.Controls.Add(this.CBnumberOfRooms);
-            this.inputPanel.Controls.Add(this.btnGenerate);
-            this.inputPanel.Controls.Add(this.label1);
-            this.inputPanel.Controls.Add(this.label4);
-            this.inputPanel.Controls.Add(this.label2);
-            this.inputPanel.Controls.Add(this.CBendTIme);
-            this.inputPanel.Controls.Add(this.TBclassName);
-            this.inputPanel.Controls.Add(this.label3);
-            this.inputPanel.Controls.Add(this.CBstartTime);
-            this.inputPanel.Location = new System.Drawing.Point(0, 50);
-            this.inputPanel.Name = "inputPanel";
-            this.inputPanel.Size = new System.Drawing.Size(476, 580);
-            this.inputPanel.TabIndex = 10;
+            this.txtNumberofrooms.BackColor = System.Drawing.Color.DarkRed;
+            this.txtNumberofrooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumberofrooms.ForeColor = System.Drawing.SystemColors.Control;
+            this.txtNumberofrooms.Location = new System.Drawing.Point(247, 93);
+            this.txtNumberofrooms.Name = "txtNumberofrooms";
+            this.txtNumberofrooms.Size = new System.Drawing.Size(200, 31);
+            this.txtNumberofrooms.TabIndex = 12;
             // 
             // btnInsert
             // 
@@ -318,6 +301,18 @@
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.DarkRed;
+            this.label5.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(55, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(375, 37);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Time Table Generator";
+            // 
             // Time_Table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -340,15 +335,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox CBnumberOfRooms;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TBclassName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox CBstartTime;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox CBendTIme;
+        private System.Windows.Forms.ComboBox CBendTime;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Panel inputPanel;
         private System.Windows.Forms.Panel panel1;
@@ -357,5 +349,8 @@
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.TextBox txtNumberofrooms;
+        private System.Windows.Forms.ComboBox CBstartTime;
+        private System.Windows.Forms.Label label5;
     }
 }
