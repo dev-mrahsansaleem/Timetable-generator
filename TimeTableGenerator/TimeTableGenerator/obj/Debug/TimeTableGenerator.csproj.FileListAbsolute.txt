@@ -19,3 +19,4 @@ E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\T
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Time_Table.resources
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.csproj.GenerateResource.Cache
 E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.editForm.resources
+E:\git hub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Edit.resources

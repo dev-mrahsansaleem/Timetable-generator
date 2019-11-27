@@ -21,18 +21,18 @@ namespace TimeTableGenerator
         private List<cClassData> classStore = new List<cClassData>();
         
 
-        private void showInputClass()
+        public void showInputClass()
         {
             DGVinputData.DataSource = "";
             DGVinputData.DataSource = classStore;
         }
-        private void showOutputClass()
+        public void showOutputClass()
         {
             classStore = classStore.OrderBy(o => o.RoomNo).ToList();
             DGVoutputData.DataSource = "";
             DGVoutputData.DataSource = classStore;
         }
-        private void sortByEndTime(List <cClassData> pClassStore)
+        public void sortByEndTime(List <cClassData> pClassStore)
         {
             for (int j= 0; j < pClassStore.Count; j++)
             {
@@ -48,7 +48,7 @@ namespace TimeTableGenerator
             }
         }
 
-        private void GenerateOptimalSelectedClass(List<cClassData> pClassStore)
+        public void GenerateOptimalSelectedClass(List<cClassData> pClassStore)
         {
             currentRoomNo = 1;
             sortByEndTime(pClassStore);
@@ -83,7 +83,7 @@ namespace TimeTableGenerator
         {
             InitializeComponent();
         }
-        private void btnInsert_Click(object sender, EventArgs e)
+        public void btnInsert_Click(object sender, EventArgs e)
         {
             maxRoomCap = Convert.ToInt32(txtNumberofrooms.Text);//max rooms
             txtNumberofrooms.ReadOnly = true; //after 1st insertion make readonly can't be change later
@@ -111,7 +111,7 @@ namespace TimeTableGenerator
             showInputClass();
         }
 
-        private void DGVinputData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void DGVinputData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if(classStore.Count > 0)
             {
@@ -122,7 +122,7 @@ namespace TimeTableGenerator
                 }
                 else if(e.ColumnIndex==1)   //edit button on DGV
                 {
-                    editForm nform = new editForm(classStore,e.RowIndex);
+                    TimeTableGenerator.Edit nform = new TimeTableGenerator.Edit(this ,classStore,e.RowIndex);
                     nform.Show();
                 }
             }
@@ -133,7 +133,7 @@ namespace TimeTableGenerator
             
         }
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+        public void btnGenerate_Click(object sender, EventArgs e)
         {
             GenerateOptimalSelectedClass(classStore);
             showOutputClass();

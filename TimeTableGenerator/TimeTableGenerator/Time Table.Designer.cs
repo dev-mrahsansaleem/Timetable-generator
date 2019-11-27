@@ -36,6 +36,7 @@
             this.CBendTime = new System.Windows.Forms.ComboBox();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.inputPanel = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.CBstartTime = new System.Windows.Forms.ComboBox();
             this.txtNumberofrooms = new System.Windows.Forms.TextBox();
             this.btnInsert = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.DGVinputData = new System.Windows.Forms.DataGridView();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label5 = new System.Windows.Forms.Label();
             this.inputPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVoutputData)).BeginInit();
@@ -184,6 +184,18 @@
             this.inputPanel.Size = new System.Drawing.Size(476, 580);
             this.inputPanel.TabIndex = 10;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.DarkRed;
+            this.label5.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(55, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(375, 37);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Time Table Generator";
+            // 
             // CBstartTime
             // 
             this.CBstartTime.BackColor = System.Drawing.Color.DarkRed;
@@ -300,18 +312,6 @@
             this.Edit.Name = "Edit";
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.DarkRed;
-            this.label5.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(55, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(375, 37);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Time Table Generator";
             // 
             // Time_Table
             // 
