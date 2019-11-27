@@ -38,11 +38,18 @@ namespace TimeTableGenerator
             {
                 for (int i = j + 1; i < pClassStore.Count; i++)
                 {
-                    if (pClassStore[i].EndTime<=pClassStore[i-1].EndTime)
+                    if (endTime < 0 && endTime < 24)
                     {
-                        cClassData temp = pClassStore[i];
-                        pClassStore[i] = pClassStore[i -1];
-                        pClassStore[i-1] = temp;
+                        if (pClassStore[i].EndTime <= pClassStore[i - 1].EndTime)
+                        {
+                            cClassData temp = pClassStore[i];
+                            pClassStore[i] = pClassStore[i - 1];
+                            pClassStore[i - 1] = temp;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("invalide time", "invalide", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -57,10 +64,17 @@ namespace TimeTableGenerator
                 //select 1st non assigned room after sorting
                 foreach (cClassData x in classStore)
                 {
-                    if (x.RoomNo == "no assign")
+                    if (currentRoomNo < 0)
                     {
-                        x.RoomNo = currentRoomNo.ToString();
-                        break;
+                        if (x.RoomNo == "no assign")
+                        {
+                            x.RoomNo = currentRoomNo.ToString();
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("invalide room number", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 //^^^^select 1st non assigned room after sorting^^^^
@@ -69,10 +83,17 @@ namespace TimeTableGenerator
                 i = 0;
                 for (j = 1; j < pClassStore.Count; j++)
                 {
-                    if(pClassStore[j].StartTime>=pClassStore[i].EndTime && pClassStore[j].RoomNo == "no assign")
+                    if (startTime < 0 && startTime > 24)
                     {
-                        pClassStore[j].RoomNo = currentRoomNo.ToString();
-                        i = j;
+                        if (pClassStore[j].StartTime >= pClassStore[i].EndTime && pClassStore[j].RoomNo == "no assign")
+                        {
+                            pClassStore[j].RoomNo = currentRoomNo.ToString();
+                            i = j;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("invalide time", "invalide", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 currentRoomNo++;
@@ -120,6 +141,47 @@ namespace TimeTableGenerator
                     MessageBox.Show("all fields should be filled", "pleas enter the data and then process further", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
        
+            {
+                if (txtNumberofrooms = '')
+                {
+                    MessageBox.Show("invalid text", "invald", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    maxRoomCap = Convert.ToInt32(txtNumberofrooms.Text);//max rooms
+                    if (currentRoomNo < 0 && currentRoomNo > 9)
+                    {
+                        txtNumberofrooms.ReadOnly = true; //after 1st insertion make readonly can't be change later
+                        txtNumberofrooms.BackColor = Color.DimGray;
+                        //read data
+                        className = TBclassName.Text;
+                        startTime = Convert.ToInt32(CBstartTime.Text);
+                        endTime = Convert.ToInt32(CBendTime.Text);
+
+                        cClassData mydata = new cClassData();//create a object
+                        mydata.ClassName = className;
+                        mydata.StartTime = startTime;
+                        mydata.EndTime = endTime;
+                        //add new data object (new class) in to classStore
+                        classStore.Add(mydata);
+
+                        //reset GUI data input fields
+                        CBstartTime.Text = "";
+                        CBendTime.Text = "";
+                        TBclassName.Text = "";
+                        className = "";
+                        startTime = 0;
+                        endTime = 24;
+                        //whole data on datagrid view
+                        showInputClass();
+                    }
+                    else
+                    {
+                        MessageBox.Show("enter valide room no.", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
         }
 
         public void DGVinputData_CellContentClick(object sender, DataGridViewCellEventArgs e)
