@@ -38,11 +38,18 @@ namespace TimeTableGenerator
             {
                 for (int i = j + 1; i < pClassStore.Count; i++)
                 {
-                    if (pClassStore[i].EndTime<=pClassStore[i-1].EndTime)
+                    if (endTime < 0 && endTime < 24)
                     {
-                        cClassData temp = pClassStore[i];
-                        pClassStore[i] = pClassStore[i -1];
-                        pClassStore[i-1] = temp;
+                        if (pClassStore[i].EndTime <= pClassStore[i - 1].EndTime)
+                        {
+                            cClassData temp = pClassStore[i];
+                            pClassStore[i] = pClassStore[i - 1];
+                            pClassStore[i - 1] = temp;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("invalide time", "invalide", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -57,10 +64,17 @@ namespace TimeTableGenerator
                 //select 1st non assigned room after sorting
                 foreach (cClassData x in classStore)
                 {
-                    if (x.RoomNo == "no assign")
+                    if (currentRoomNo < 0)
                     {
-                        x.RoomNo = currentRoomNo.ToString();
-                        break;
+                        if (x.RoomNo == "no assign")
+                        {
+                            x.RoomNo = currentRoomNo.ToString();
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("invalide room number", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 //^^^^select 1st non assigned room after sorting^^^^
@@ -69,10 +83,17 @@ namespace TimeTableGenerator
                 i = 0;
                 for (j = 1; j < pClassStore.Count; j++)
                 {
-                    if(pClassStore[j].StartTime>=pClassStore[i].EndTime && pClassStore[j].RoomNo == "no assign")
+                    if (startTime < 0 && startTime > 24)
                     {
-                        pClassStore[j].RoomNo = currentRoomNo.ToString();
-                        i = j;
+                        if (pClassStore[j].StartTime >= pClassStore[i].EndTime && pClassStore[j].RoomNo == "no assign")
+                        {
+                            pClassStore[j].RoomNo = currentRoomNo.ToString();
+                            i = j;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("invalide time", "invalide", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 currentRoomNo++;
