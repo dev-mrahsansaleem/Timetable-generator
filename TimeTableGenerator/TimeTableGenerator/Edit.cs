@@ -42,6 +42,7 @@ namespace TimeTableGenerator
         private void Edit_Load(object sender, EventArgs e)
         {
             TBclassNameOld.Text = classStore[rowIndex].ClassName;
+            TBclassNameOld.ReadOnly = true;
             TBcStartTimeOld.Text = classStore[rowIndex].StartTime.ToString();
             TBcEndTimeOld.Text = classStore[rowIndex].EndTime.ToString();
         }

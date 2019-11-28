@@ -254,7 +254,7 @@ namespace TimeTableGenerator
             this.label8.BackColor = System.Drawing.Color.DarkRed;
             this.label8.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(904, 120);
+            this.label8.Location = new System.Drawing.Point(983, 120);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(187, 37);
             this.label8.TabIndex = 40;

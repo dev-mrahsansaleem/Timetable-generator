@@ -36,15 +36,17 @@
             this.CBendTime = new System.Windows.Forms.ComboBox();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.inputPanel = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.CBstartTime = new System.Windows.Forms.ComboBox();
             this.txtNumberofrooms = new System.Windows.Forms.TextBox();
             this.btnInsert = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DGVoutputData = new System.Windows.Forms.DataGridView();
+            this.serialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVinputData = new System.Windows.Forms.DataGridView();
+            this.Sr_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label5 = new System.Windows.Forms.Label();
             this.inputPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVoutputData)).BeginInit();
@@ -184,18 +186,6 @@
             this.inputPanel.Size = new System.Drawing.Size(476, 580);
             this.inputPanel.TabIndex = 10;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.DarkRed;
-            this.label5.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(55, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(375, 37);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Time Table Generator";
-            // 
             // CBstartTime
             // 
             this.CBstartTime.BackColor = System.Drawing.Color.DarkRed;
@@ -276,17 +266,28 @@
             // 
             this.DGVoutputData.BackgroundColor = System.Drawing.Color.Gray;
             this.DGVoutputData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVoutputData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.serialNumber});
             this.DGVoutputData.Dock = System.Windows.Forms.DockStyle.Top;
             this.DGVoutputData.Location = new System.Drawing.Point(0, 292);
             this.DGVoutputData.Name = "DGVoutputData";
             this.DGVoutputData.Size = new System.Drawing.Size(918, 292);
             this.DGVoutputData.TabIndex = 1;
+            this.DGVoutputData.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.DGVoutputData_RowPostPaint);
+            // 
+            // serialNumber
+            // 
+            this.serialNumber.Frozen = true;
+            this.serialNumber.HeaderText = "Sr. No.";
+            this.serialNumber.Name = "serialNumber";
+            this.serialNumber.ReadOnly = true;
             // 
             // DGVinputData
             // 
             this.DGVinputData.BackgroundColor = System.Drawing.Color.Black;
             this.DGVinputData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVinputData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Sr_No,
             this.Delete,
             this.Edit});
             this.DGVinputData.Dock = System.Windows.Forms.DockStyle.Top;
@@ -296,6 +297,14 @@
             this.DGVinputData.Size = new System.Drawing.Size(918, 292);
             this.DGVinputData.TabIndex = 0;
             this.DGVinputData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVinputData_CellContentClick);
+            this.DGVinputData.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.DGVinputData_RowPostPaint);
+            // 
+            // Sr_No
+            // 
+            this.Sr_No.Frozen = true;
+            this.Sr_No.HeaderText = "Sr. No.";
+            this.Sr_No.Name = "Sr_No";
+            this.Sr_No.ReadOnly = true;
             // 
             // Delete
             // 
@@ -312,6 +321,18 @@
             this.Edit.Name = "Edit";
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.DarkRed;
+            this.label5.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(135, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(207, 37);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Data Entry";
             // 
             // Time_Table
             // 
@@ -347,10 +368,12 @@
         private System.Windows.Forms.DataGridView DGVoutputData;
         private System.Windows.Forms.DataGridView DGVinputData;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.TextBox txtNumberofrooms;
         private System.Windows.Forms.ComboBox CBstartTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sr_No;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serialNumber;
         private System.Windows.Forms.Label label5;
     }
 }

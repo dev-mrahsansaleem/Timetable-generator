@@ -33,12 +33,14 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnMaximze = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.title = new System.Windows.Forms.Label();
             this.topPanelMover.SuspendLayout();
             this.SuspendLayout();
             // 
             // topPanelMover
             // 
             this.topPanelMover.BackColor = System.Drawing.Color.Maroon;
+            this.topPanelMover.Controls.Add(this.title);
             this.topPanelMover.Controls.Add(this.btnMinimize);
             this.topPanelMover.Controls.Add(this.btnMaximze);
             this.topPanelMover.Controls.Add(this.btnClose);
@@ -99,6 +101,18 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.BackColor = System.Drawing.Color.Transparent;
+            this.title.Font = new System.Drawing.Font("Lucida Calligraphy", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.ForeColor = System.Drawing.Color.White;
+            this.title.Location = new System.Drawing.Point(526, 4);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(348, 36);
+            this.title.TabIndex = 16;
+            this.title.Text = "Time Table Generator";
+            // 
             // templateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -115,6 +129,7 @@
             this.Text = "templateForm";
             this.Load += new System.EventHandler(this.templateForm_Load);
             this.topPanelMover.ResumeLayout(false);
+            this.topPanelMover.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -125,5 +140,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnMaximze;
         private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Label title;
     }
 }
