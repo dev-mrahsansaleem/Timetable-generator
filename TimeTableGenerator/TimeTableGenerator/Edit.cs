@@ -32,6 +32,7 @@ namespace TimeTableGenerator
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //update the record by overwriting on the very index
             classStore[rowIndex].ClassName = TBclassNameNew.Text;
             classStore[rowIndex].StartTime = Convert.ToInt32(CBcStartTimeNew.Text);
             classStore[rowIndex].EndTime = Convert.ToInt32(CBcEndTimeNew.Text);
@@ -44,7 +45,15 @@ namespace TimeTableGenerator
             TBclassNameOld.Text = classStore[rowIndex].ClassName;
             TBclassNameOld.ReadOnly = true;
             TBcStartTimeOld.Text = classStore[rowIndex].StartTime.ToString();
+            TBcStartTimeOld.ReadOnly = true;
             TBcEndTimeOld.Text = classStore[rowIndex].EndTime.ToString();
+            TBcEndTimeOld.ReadOnly = true;
+            //make the previous data read only so that the prevoius data cannot be changed instead updated on the side
+        }
+
+        private void TBclassNameOld_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
