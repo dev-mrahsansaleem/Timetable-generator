@@ -142,7 +142,7 @@ namespace TimeTableGenerator
                 }
        
             {
-                if (txtNumberofrooms.Text=)
+                if (true)
                 {
                     MessageBox.Show("invalid text", "invald", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
