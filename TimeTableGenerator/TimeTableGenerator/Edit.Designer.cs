@@ -80,6 +80,7 @@ namespace TimeTableGenerator
             this.TBclassNameOld.Name = "TBclassNameOld";
             this.TBclassNameOld.Size = new System.Drawing.Size(200, 31);
             this.TBclassNameOld.TabIndex = 26;
+            this.TBclassNameOld.TextChanged += new System.EventHandler(this.TBclassNameOld_TextChanged);
             // 
             // label3
             // 
@@ -240,11 +241,11 @@ namespace TimeTableGenerator
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.DarkRed;
-            this.label7.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(112, 120);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(166, 37);
+            this.label7.Size = new System.Drawing.Size(138, 33);
             this.label7.TabIndex = 39;
             this.label7.Text = "Old Data";
             // 
@@ -252,11 +253,11 @@ namespace TimeTableGenerator
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.DarkRed;
-            this.label8.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(983, 120);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(187, 37);
+            this.label8.Size = new System.Drawing.Size(150, 33);
             this.label8.TabIndex = 40;
             this.label8.Text = "New Data";
             // 
@@ -284,7 +285,7 @@ namespace TimeTableGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 630);
+            this.ClientSize = new System.Drawing.Size(1386, 630);
             this.Controls.Add(this.TBcStartTimeOld);
             this.Controls.Add(this.TBcEndTimeOld);
             this.Controls.Add(this.label8);
