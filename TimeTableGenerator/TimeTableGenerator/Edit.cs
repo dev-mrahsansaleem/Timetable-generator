@@ -13,6 +13,11 @@ namespace TimeTableGenerator
 {
     public partial class Edit : templateForm
     {
+
+        private string className = "";
+        private int startTime = 0;
+        private int endTime = 24;
+
         private List<cClassData> classStore;
         private int rowIndex;
         private Time_Table time_Table;
@@ -32,11 +37,42 @@ namespace TimeTableGenerator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            classStore[rowIndex].ClassName = TBclassNameNew.Text;
-            classStore[rowIndex].StartTime = Convert.ToInt32(CBcStartTimeNew.Text);
-            classStore[rowIndex].EndTime = Convert.ToInt32(CBcEndTimeNew.Text);
-            time_Table.showInputClass();
-            this.Close();
+            className = TBclassNameNew.Text.Trim();
+            if(className!="")
+            {
+                classStore[rowIndex].ClassName = className;
+                try
+                {
+                    startTime = Convert.ToInt32(CBcStartTimeNew.Text);//start time accepted
+                    try
+                    {
+                        endTime = Convert.ToInt32(CBcEndTimeNew.Text);//end time accepted
+                        if (startTime < endTime)
+                        {
+                            classStore[rowIndex].StartTime = startTime;
+                            classStore[rowIndex].EndTime = endTime;
+                            //^^^^^^^^^^^^^^^^^valid start and end time
+                            time_Table.showInputClass();
+                            this.Close();
+                        }
+                        else
+                            MessageBox.Show("Start time must be less than endtime of class", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Select a valid end time for a class", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Select a valid start time for a class", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter a class name", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void Edit_Load(object sender, EventArgs e)
@@ -44,7 +80,9 @@ namespace TimeTableGenerator
             TBclassNameOld.Text = classStore[rowIndex].ClassName;
             TBclassNameOld.ReadOnly = true;
             TBcStartTimeOld.Text = classStore[rowIndex].StartTime.ToString();
+            TBcStartTimeOld.ReadOnly = true;
             TBcEndTimeOld.Text = classStore[rowIndex].EndTime.ToString();
+            TBcEndTimeOld.ReadOnly = true;
         }
     }
 }
