@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,14 +29,9 @@ namespace TimeTableGenerator
 
         public void showInputClass()
         {
+            classStore = classStore.OrderBy(o => o.RoomNo).ToList();
             DGVinputData.DataSource = "";
             DGVinputData.DataSource = classStore;
-        }
-        public void showOutputClass()
-        {
-            classStore = classStore.OrderBy(o => o.RoomNo).ToList();
-            DGVoutputData.DataSource = "";
-            DGVoutputData.DataSource = classStore;
         }
         public void sortByEndTime(List <cClassData> pClassStore)
         {
@@ -64,7 +60,7 @@ namespace TimeTableGenerator
             bool status = false;
             foreach(cClassData x in classStore)
             {
-                if (x.RoomNo == "no assign")
+                if (x.RoomNo == -1)
                 {
                     status = true;
                     break;
@@ -80,7 +76,7 @@ namespace TimeTableGenerator
             //reset all classes incase pre changed
             foreach (cClassData x in classStore)
             {
-                    x.RoomNo = "no assign";
+                    x.RoomNo = -1;
             }
             //^^^^reset all classes incase pre changed^^^
             sortByEndTime(pClassStore);
@@ -90,9 +86,9 @@ namespace TimeTableGenerator
                 //select 1st non assigned room after sorting
                 foreach (cClassData x in classStore)
                 {
-                    if (x.RoomNo == "no assign")
+                    if (x.RoomNo == -1)
                     {
-                        x.RoomNo = currentRoomNo.ToString();
+                        x.RoomNo = currentRoomNo;
                         break;
                     }
                 }
@@ -103,9 +99,9 @@ namespace TimeTableGenerator
                 for (j = 1; j < pClassStore.Count; j++)
                 {
                     //if(pClassStore[j].StartTime > pClassStore[i].EndTime)
-                    if (pClassStore[j].StartTime >= pClassStore[i].EndTime && pClassStore[j].RoomNo == "no assign")
+                    if (pClassStore[j].StartTime >= pClassStore[i].EndTime && pClassStore[j].RoomNo == -1)
                     {
-                        pClassStore[j].RoomNo = currentRoomNo.ToString();
+                        pClassStore[j].RoomNo = currentRoomNo;
                         i = j;
                     }
                 }
@@ -122,7 +118,7 @@ namespace TimeTableGenerator
                 try
                 {
                     maxRoomCap = Convert.ToInt32(txtNumberofrooms.Text.Trim());
-                    if (maxRoomCap > 0 && maxRoomCap < 10)
+                    if (maxRoomCap > 0 && maxRoomCap < 100)
                     {
                         className = TBclassName.Text.Trim();
                         if (className != "")
@@ -153,37 +149,37 @@ namespace TimeTableGenerator
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Start time must be less than endtime of class", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        MessageBox.Show("Start time must be less than endtime of class", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
                                 }
                                 catch
                                 {
-                                    MessageBox.Show("Select a valid end time for a class", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("Select a valid end time for a class", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                             catch
                             {
-                                MessageBox.Show("Select a valid start time for a class", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Select a valid start time for a class", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Enter a class name", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Enter a class name", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Number of rooms must be between 0 to 9", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Number of rooms must be between 0 to 9", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch
                 {
-                    MessageBox.Show("Number of rooms must be numaric values", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Number of rooms must be numaric values", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Enter maximum number of rooms available...!!!", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Enter maximum number of rooms available...!!!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -195,17 +191,19 @@ namespace TimeTableGenerator
                 if(e.ColumnIndex==1)        //delete button on DGV
                 {
                     classStore.RemoveAt(e.RowIndex);
+                    GenerateOptimalSelectedClass(classStore);
                     showInputClass();
                 }
                 else if(e.ColumnIndex==2)   //edit button on DGV
                 {
                     TimeTableGenerator.Edit nform = new TimeTableGenerator.Edit(this ,classStore,e.RowIndex);
                     nform.Show();
+                    GenerateOptimalSelectedClass(classStore);
                 }
             }
             else
             {
-                MessageBox.Show("nothing to delete or edit", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("nothing to delete or edit", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -217,30 +215,74 @@ namespace TimeTableGenerator
                 try
                 {
                     maxRoomCap = Convert.ToInt32(txtNumberofrooms.Text.Trim());
+                    GenerateOptimalSelectedClass(classStore);
+                    showInputClass();
                 }
                 catch
                 {
-                    MessageBox.Show("Number of rooms must be numaric values", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Number of rooms must be numaric values", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Enter maximum number of rooms available...!!!", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Enter maximum number of rooms available...!!!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
-            GenerateOptimalSelectedClass(classStore);
-            showOutputClass();
-            //showInputClass();                 //don't remove it
         }
 
         private void DGVinputData_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             DGVinputData.Rows[e.RowIndex].Cells[0].Value = e.RowIndex + 1;
         }
+        
 
-        private void DGVoutputData_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        private void btnBrowse_Click(object sender, EventArgs e)
         {
-            DGVoutputData.Rows[e.RowIndex].Cells[0].Value = e.RowIndex + 1;
+            //OpenFileDialog openFileDialog = new OpenFileDialog();
+            //openFileDialog.Filter = "CSV files (*.csv)|*.csv|XML files (*.xml)|*.xml";
+            try
+            {
+                string filename = "";
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Title = "Open CSV File";
+                dialog.Filter = "CSV Files (*.csv)|*.csv";
+                dialog.ShowDialog();
+                filename = dialog.FileName;
+                TBFileName.Text = filename;
+                try
+                {
+                    StreamReader reader = new StreamReader(File.OpenRead(@filename));
+                    while (!reader.EndOfStream)
+                    {
+                        var line = reader.ReadLine();
+                        if (!String.IsNullOrWhiteSpace(line))
+                        {
+                            string[] values = line.Split(',');
+                            if (values.Length >= 3)
+                            {
+                                cClassData myclass = new cClassData();
+                                myclass.ClassName = values[0];
+                                myclass.StartTime = Convert.ToInt32(values[1]);
+                                myclass.EndTime = Convert.ToInt32(values[2]);
+                                classStore.Add(myclass);
+                            }
+
+                        }
+
+                    }
+                    MessageBox.Show("Data Loaded Successfully...!!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    showInputClass();
+                }
+                catch
+                {
+                    MessageBox.Show("Can't Read or load specified file...!!!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Error while opening CSV file...!!!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -36,20 +36,19 @@
             this.CBendTime = new System.Windows.Forms.ComboBox();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.inputPanel = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.TBFileName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.CBstartTime = new System.Windows.Forms.ComboBox();
             this.txtNumberofrooms = new System.Windows.Forms.TextBox();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.DGVoutputData = new System.Windows.Forms.DataGridView();
-            this.serialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVinputData = new System.Windows.Forms.DataGridView();
             this.Sr_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label5 = new System.Windows.Forms.Label();
             this.inputPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVoutputData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVinputData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +58,7 @@
             this.label1.BackColor = System.Drawing.Color.DarkRed;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(40, 96);
+            this.label1.Location = new System.Drawing.Point(127, 502);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 25);
             this.label1.TabIndex = 2;
@@ -71,7 +70,7 @@
             this.label2.BackColor = System.Drawing.Color.DarkRed;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(40, 177);
+            this.label2.Location = new System.Drawing.Point(134, 272);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 25);
             this.label2.TabIndex = 3;
@@ -82,7 +81,7 @@
             this.TBclassName.BackColor = System.Drawing.Color.DarkRed;
             this.TBclassName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBclassName.ForeColor = System.Drawing.SystemColors.Control;
-            this.TBclassName.Location = new System.Drawing.Point(247, 174);
+            this.TBclassName.Location = new System.Drawing.Point(341, 269);
             this.TBclassName.Name = "TBclassName";
             this.TBclassName.Size = new System.Drawing.Size(200, 31);
             this.TBclassName.TabIndex = 4;
@@ -93,7 +92,7 @@
             this.label3.BackColor = System.Drawing.Color.DarkRed;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(40, 258);
+            this.label3.Location = new System.Drawing.Point(79, 342);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 25);
             this.label3.TabIndex = 6;
@@ -105,7 +104,7 @@
             this.label4.BackColor = System.Drawing.Color.DarkRed;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(40, 339);
+            this.label4.Location = new System.Drawing.Point(379, 337);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 25);
             this.label4.TabIndex = 8;
@@ -147,9 +146,9 @@
             "22",
             "23",
             "24"});
-            this.CBendTime.Location = new System.Drawing.Point(247, 334);
+            this.CBendTime.Location = new System.Drawing.Point(524, 334);
             this.CBendTime.Name = "CBendTime";
-            this.CBendTime.Size = new System.Drawing.Size(200, 33);
+            this.CBendTime.Size = new System.Drawing.Size(93, 33);
             this.CBendTime.TabIndex = 7;
             // 
             // btnGenerate
@@ -159,7 +158,7 @@
             this.btnGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerate.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGenerate.Location = new System.Drawing.Point(247, 429);
+            this.btnGenerate.Location = new System.Drawing.Point(236, 563);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(212, 58);
             this.btnGenerate.TabIndex = 9;
@@ -170,6 +169,11 @@
             // inputPanel
             // 
             this.inputPanel.AutoSize = true;
+            this.inputPanel.BackColor = System.Drawing.Color.Black;
+            this.inputPanel.Controls.Add(this.label7);
+            this.inputPanel.Controls.Add(this.btnBrowse);
+            this.inputPanel.Controls.Add(this.TBFileName);
+            this.inputPanel.Controls.Add(this.label6);
             this.inputPanel.Controls.Add(this.label5);
             this.inputPanel.Controls.Add(this.CBstartTime);
             this.inputPanel.Controls.Add(this.txtNumberofrooms);
@@ -181,10 +185,74 @@
             this.inputPanel.Controls.Add(this.CBendTime);
             this.inputPanel.Controls.Add(this.TBclassName);
             this.inputPanel.Controls.Add(this.label3);
+            this.inputPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.inputPanel.Location = new System.Drawing.Point(0, 50);
+            this.inputPanel.MaximumSize = new System.Drawing.Size(800, 0);
             this.inputPanel.Name = "inputPanel";
-            this.inputPanel.Size = new System.Drawing.Size(476, 580);
+            this.inputPanel.Size = new System.Drawing.Size(684, 650);
             this.inputPanel.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.DarkRed;
+            this.label7.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(208, 202);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(246, 37);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Insert A Class";
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.BackColor = System.Drawing.Color.DarkRed;
+            this.btnBrowse.FlatAppearance.BorderSize = 0;
+            this.btnBrowse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrowse.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnBrowse.Location = new System.Drawing.Point(563, 121);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(118, 40);
+            this.btnBrowse.TabIndex = 18;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = false;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // TBFileName
+            // 
+            this.TBFileName.BackColor = System.Drawing.Color.DarkRed;
+            this.TBFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBFileName.ForeColor = System.Drawing.SystemColors.Control;
+            this.TBFileName.Location = new System.Drawing.Point(204, 84);
+            this.TBFileName.Name = "TBFileName";
+            this.TBFileName.ReadOnly = true;
+            this.TBFileName.Size = new System.Drawing.Size(477, 31);
+            this.TBFileName.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.DarkRed;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(12, 87);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(173, 25);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Load from a File:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.DarkRed;
+            this.label5.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(127, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(430, 37);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Load Data From Csv File";
             // 
             // CBstartTime
             // 
@@ -222,9 +290,9 @@
             "22",
             "23",
             "24"});
-            this.CBstartTime.Location = new System.Drawing.Point(247, 259);
+            this.CBstartTime.Location = new System.Drawing.Point(224, 334);
             this.CBstartTime.Name = "CBstartTime";
-            this.CBstartTime.Size = new System.Drawing.Size(200, 33);
+            this.CBstartTime.Size = new System.Drawing.Size(93, 33);
             this.CBstartTime.TabIndex = 13;
             // 
             // txtNumberofrooms
@@ -232,7 +300,7 @@
             this.txtNumberofrooms.BackColor = System.Drawing.Color.DarkRed;
             this.txtNumberofrooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumberofrooms.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtNumberofrooms.Location = new System.Drawing.Point(247, 93);
+            this.txtNumberofrooms.Location = new System.Drawing.Point(341, 499);
             this.txtNumberofrooms.Name = "txtNumberofrooms";
             this.txtNumberofrooms.Size = new System.Drawing.Size(200, 31);
             this.txtNumberofrooms.TabIndex = 12;
@@ -244,43 +312,13 @@
             this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnInsert.Location = new System.Drawing.Point(12, 429);
+            this.btnInsert.Location = new System.Drawing.Point(236, 393);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(212, 58);
             this.btnInsert.TabIndex = 11;
-            this.btnInsert.Text = "Insert Class";
+            this.btnInsert.Text = "Load / Insert";
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.DGVoutputData);
-            this.panel1.Controls.Add(this.DGVinputData);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(468, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(918, 580);
-            this.panel1.TabIndex = 11;
-            // 
-            // DGVoutputData
-            // 
-            this.DGVoutputData.BackgroundColor = System.Drawing.Color.Gray;
-            this.DGVoutputData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVoutputData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.serialNumber});
-            this.DGVoutputData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DGVoutputData.Location = new System.Drawing.Point(0, 292);
-            this.DGVoutputData.Name = "DGVoutputData";
-            this.DGVoutputData.Size = new System.Drawing.Size(918, 292);
-            this.DGVoutputData.TabIndex = 1;
-            this.DGVoutputData.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.DGVoutputData_RowPostPaint);
-            // 
-            // serialNumber
-            // 
-            this.serialNumber.Frozen = true;
-            this.serialNumber.HeaderText = "Sr. No.";
-            this.serialNumber.Name = "serialNumber";
-            this.serialNumber.ReadOnly = true;
             // 
             // DGVinputData
             // 
@@ -290,11 +328,11 @@
             this.Sr_No,
             this.Delete,
             this.Edit});
-            this.DGVinputData.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DGVinputData.Dock = System.Windows.Forms.DockStyle.Right;
             this.DGVinputData.GridColor = System.Drawing.Color.Black;
-            this.DGVinputData.Location = new System.Drawing.Point(0, 0);
+            this.DGVinputData.Location = new System.Drawing.Point(687, 50);
             this.DGVinputData.Name = "DGVinputData";
-            this.DGVinputData.Size = new System.Drawing.Size(918, 292);
+            this.DGVinputData.Size = new System.Drawing.Size(913, 650);
             this.DGVinputData.TabIndex = 0;
             this.DGVinputData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVinputData_CellContentClick);
             this.DGVinputData.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.DGVinputData_RowPostPaint);
@@ -322,33 +360,20 @@
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.DarkRed;
-            this.label5.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(135, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(207, 37);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Data Entry";
-            // 
             // Time_Table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 630);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(1600, 700);
             this.Controls.Add(this.inputPanel);
+            this.Controls.Add(this.DGVinputData);
             this.Name = "Time_Table";
             this.Text = "Time_Table";
+            this.Controls.SetChildIndex(this.DGVinputData, 0);
             this.Controls.SetChildIndex(this.inputPanel, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
             this.inputPanel.ResumeLayout(false);
             this.inputPanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGVoutputData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVinputData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -364,8 +389,6 @@
         private System.Windows.Forms.ComboBox CBendTime;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Panel inputPanel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView DGVoutputData;
         private System.Windows.Forms.DataGridView DGVinputData;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.TextBox txtNumberofrooms;
@@ -373,7 +396,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Sr_No;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serialNumber;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.TextBox TBFileName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

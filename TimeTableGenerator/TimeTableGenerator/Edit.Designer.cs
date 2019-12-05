@@ -53,7 +53,7 @@ namespace TimeTableGenerator
             this.label4.BackColor = System.Drawing.Color.DarkRed;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(96, 384);
+            this.label4.Location = new System.Drawing.Point(198, 404);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 25);
             this.label4.TabIndex = 29;
@@ -65,7 +65,7 @@ namespace TimeTableGenerator
             this.label2.BackColor = System.Drawing.Color.DarkRed;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(96, 222);
+            this.label2.Location = new System.Drawing.Point(198, 242);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 25);
             this.label2.TabIndex = 25;
@@ -76,11 +76,10 @@ namespace TimeTableGenerator
             this.TBclassNameOld.BackColor = System.Drawing.Color.DarkRed;
             this.TBclassNameOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBclassNameOld.ForeColor = System.Drawing.SystemColors.Control;
-            this.TBclassNameOld.Location = new System.Drawing.Point(303, 219);
+            this.TBclassNameOld.Location = new System.Drawing.Point(405, 239);
             this.TBclassNameOld.Name = "TBclassNameOld";
             this.TBclassNameOld.Size = new System.Drawing.Size(200, 31);
             this.TBclassNameOld.TabIndex = 26;
-            this.TBclassNameOld.TextChanged += new System.EventHandler(this.TBclassNameOld_TextChanged);
             // 
             // label3
             // 
@@ -88,7 +87,7 @@ namespace TimeTableGenerator
             this.label3.BackColor = System.Drawing.Color.DarkRed;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(96, 303);
+            this.label3.Location = new System.Drawing.Point(198, 323);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 25);
             this.label3.TabIndex = 27;
@@ -130,7 +129,7 @@ namespace TimeTableGenerator
             "22",
             "23",
             "24"});
-            this.CBcStartTimeNew.Location = new System.Drawing.Point(1100, 303);
+            this.CBcStartTimeNew.Location = new System.Drawing.Point(1202, 323);
             this.CBcStartTimeNew.Name = "CBcStartTimeNew";
             this.CBcStartTimeNew.Size = new System.Drawing.Size(200, 33);
             this.CBcStartTimeNew.TabIndex = 38;
@@ -142,7 +141,7 @@ namespace TimeTableGenerator
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(990, 483);
+            this.button1.Location = new System.Drawing.Point(1092, 503);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(212, 58);
             this.button1.TabIndex = 37;
@@ -156,7 +155,7 @@ namespace TimeTableGenerator
             this.lblcEndTimeNew.BackColor = System.Drawing.Color.DarkRed;
             this.lblcEndTimeNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcEndTimeNew.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblcEndTimeNew.Location = new System.Drawing.Point(893, 383);
+            this.lblcEndTimeNew.Location = new System.Drawing.Point(995, 403);
             this.lblcEndTimeNew.Name = "lblcEndTimeNew";
             this.lblcEndTimeNew.Size = new System.Drawing.Size(103, 25);
             this.lblcEndTimeNew.TabIndex = 36;
@@ -168,7 +167,7 @@ namespace TimeTableGenerator
             this.lblClassNameNew.BackColor = System.Drawing.Color.DarkRed;
             this.lblClassNameNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClassNameNew.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblClassNameNew.Location = new System.Drawing.Point(893, 221);
+            this.lblClassNameNew.Location = new System.Drawing.Point(995, 241);
             this.lblClassNameNew.Name = "lblClassNameNew";
             this.lblClassNameNew.Size = new System.Drawing.Size(134, 25);
             this.lblClassNameNew.TabIndex = 32;
@@ -210,7 +209,7 @@ namespace TimeTableGenerator
             "22",
             "23",
             "24"});
-            this.CBcEndTimeNew.Location = new System.Drawing.Point(1100, 378);
+            this.CBcEndTimeNew.Location = new System.Drawing.Point(1202, 398);
             this.CBcEndTimeNew.Name = "CBcEndTimeNew";
             this.CBcEndTimeNew.Size = new System.Drawing.Size(200, 33);
             this.CBcEndTimeNew.TabIndex = 35;
@@ -220,7 +219,7 @@ namespace TimeTableGenerator
             this.TBclassNameNew.BackColor = System.Drawing.Color.DarkRed;
             this.TBclassNameNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBclassNameNew.ForeColor = System.Drawing.SystemColors.Control;
-            this.TBclassNameNew.Location = new System.Drawing.Point(1100, 218);
+            this.TBclassNameNew.Location = new System.Drawing.Point(1202, 238);
             this.TBclassNameNew.Name = "TBclassNameNew";
             this.TBclassNameNew.Size = new System.Drawing.Size(200, 31);
             this.TBclassNameNew.TabIndex = 33;
@@ -231,7 +230,7 @@ namespace TimeTableGenerator
             this.lblcStartTimeNew.BackColor = System.Drawing.Color.DarkRed;
             this.lblcStartTimeNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcStartTimeNew.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblcStartTimeNew.Location = new System.Drawing.Point(893, 302);
+            this.lblcStartTimeNew.Location = new System.Drawing.Point(995, 322);
             this.lblcStartTimeNew.Name = "lblcStartTimeNew";
             this.lblcStartTimeNew.Size = new System.Drawing.Size(116, 25);
             this.lblcStartTimeNew.TabIndex = 34;
@@ -243,7 +242,7 @@ namespace TimeTableGenerator
             this.label7.BackColor = System.Drawing.Color.DarkRed;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(112, 120);
+            this.label7.Location = new System.Drawing.Point(214, 140);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 33);
             this.label7.TabIndex = 39;
@@ -255,7 +254,7 @@ namespace TimeTableGenerator
             this.label8.BackColor = System.Drawing.Color.DarkRed;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(983, 120);
+            this.label8.Location = new System.Drawing.Point(1085, 140);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(150, 33);
             this.label8.TabIndex = 40;
@@ -266,7 +265,7 @@ namespace TimeTableGenerator
             this.TBcEndTimeOld.BackColor = System.Drawing.Color.DarkRed;
             this.TBcEndTimeOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBcEndTimeOld.ForeColor = System.Drawing.SystemColors.Control;
-            this.TBcEndTimeOld.Location = new System.Drawing.Point(303, 381);
+            this.TBcEndTimeOld.Location = new System.Drawing.Point(405, 401);
             this.TBcEndTimeOld.Name = "TBcEndTimeOld";
             this.TBcEndTimeOld.Size = new System.Drawing.Size(200, 31);
             this.TBcEndTimeOld.TabIndex = 41;
@@ -276,7 +275,7 @@ namespace TimeTableGenerator
             this.TBcStartTimeOld.BackColor = System.Drawing.Color.DarkRed;
             this.TBcStartTimeOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBcStartTimeOld.ForeColor = System.Drawing.SystemColors.Control;
-            this.TBcStartTimeOld.Location = new System.Drawing.Point(303, 300);
+            this.TBcStartTimeOld.Location = new System.Drawing.Point(405, 320);
             this.TBcStartTimeOld.Name = "TBcStartTimeOld";
             this.TBcStartTimeOld.Size = new System.Drawing.Size(200, 31);
             this.TBcStartTimeOld.TabIndex = 42;
@@ -285,7 +284,7 @@ namespace TimeTableGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 630);
+            this.ClientSize = new System.Drawing.Size(1600, 700);
             this.Controls.Add(this.TBcStartTimeOld);
             this.Controls.Add(this.TBcEndTimeOld);
             this.Controls.Add(this.label8);

@@ -37,7 +37,6 @@ namespace TimeTableGenerator
 
         private void button1_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             className = TBclassNameNew.Text.Trim();
             if(className!="")
             {
@@ -57,50 +56,39 @@ namespace TimeTableGenerator
                             this.Close();
                         }
                         else
-                            MessageBox.Show("Start time must be less than endtime of class", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Start time must be less than endtime of class", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     catch
                     {
-                        MessageBox.Show("Select a valid end time for a class", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Select a valid end time for a class", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch
                 {
-                    MessageBox.Show("Select a valid start time for a class", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Select a valid start time for a class", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Enter a class name", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Enter a class name", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-=======
             //update the record by overwriting on the very index
             classStore[rowIndex].ClassName = TBclassNameNew.Text;
             classStore[rowIndex].StartTime = Convert.ToInt32(CBcStartTimeNew.Text);
             classStore[rowIndex].EndTime = Convert.ToInt32(CBcEndTimeNew.Text);
             time_Table.showInputClass();
             this.Close();
->>>>>>> 814f6c7b36b0ffb7a3c3c09ef5e2a50437bf21a6
         }
 
         private void Edit_Load(object sender, EventArgs e)
         {
             TBclassNameOld.Text = classStore[rowIndex].ClassName;
-            TBclassNameOld.ReadOnly = true;
             TBcStartTimeOld.Text = classStore[rowIndex].StartTime.ToString();
-            TBcStartTimeOld.ReadOnly = true;
             TBcEndTimeOld.Text = classStore[rowIndex].EndTime.ToString();
-            TBcEndTimeOld.ReadOnly = true;
-<<<<<<< HEAD
-=======
             //make the previous data read only so that the prevoius data cannot be changed instead updated on the side
-        }
-
-        private void TBclassNameOld_TextChanged(object sender, EventArgs e)
-        {
-
->>>>>>> 814f6c7b36b0ffb7a3c3c09ef5e2a50437bf21a6
+            TBclassNameOld.ReadOnly = true;
+            TBcStartTimeOld.ReadOnly = true;
+            TBcEndTimeOld.ReadOnly = true;
         }
     }
 }

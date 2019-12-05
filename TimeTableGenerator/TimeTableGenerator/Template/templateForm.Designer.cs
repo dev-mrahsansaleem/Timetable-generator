@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(templateForm));
             this.topPanelMover = new System.Windows.Forms.Panel();
+            this.title = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnMaximze = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.title = new System.Windows.Forms.Label();
             this.topPanelMover.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,11 +47,23 @@
             this.topPanelMover.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanelMover.Location = new System.Drawing.Point(0, 0);
             this.topPanelMover.Name = "topPanelMover";
-            this.topPanelMover.Size = new System.Drawing.Size(1400, 50);
+            this.topPanelMover.Size = new System.Drawing.Size(1600, 50);
             this.topPanelMover.TabIndex = 0;
             this.topPanelMover.MouseDown += new System.Windows.Forms.MouseEventHandler(this.topPanelMover_MouseDown);
             this.topPanelMover.MouseMove += new System.Windows.Forms.MouseEventHandler(this.topPanelMover_MouseMove);
             this.topPanelMover.MouseUp += new System.Windows.Forms.MouseEventHandler(this.topPanelMover_MouseUp);
+            // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.BackColor = System.Drawing.Color.Transparent;
+            this.title.Font = new System.Drawing.Font("Lucida Calligraphy", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.ForeColor = System.Drawing.Color.White;
+            this.title.Location = new System.Drawing.Point(626, 4);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(348, 36);
+            this.title.TabIndex = 16;
+            this.title.Text = "Time Table Generator";
             // 
             // btnMinimize
             // 
@@ -61,7 +73,7 @@
             this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnMinimize.Location = new System.Drawing.Point(1250, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1450, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(50, 50);
             this.btnMinimize.TabIndex = 2;
@@ -77,7 +89,7 @@
             this.btnMaximze.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnMaximze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximze.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnMaximze.Location = new System.Drawing.Point(1300, 0);
+            this.btnMaximze.Location = new System.Drawing.Point(1500, 0);
             this.btnMaximze.Name = "btnMaximze";
             this.btnMaximze.Size = new System.Drawing.Size(50, 50);
             this.btnMaximze.TabIndex = 1;
@@ -93,7 +105,7 @@
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClose.Location = new System.Drawing.Point(1350, 0);
+            this.btnClose.Location = new System.Drawing.Point(1550, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(50, 50);
             this.btnClose.TabIndex = 0;
@@ -101,24 +113,12 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // title
-            // 
-            this.title.AutoSize = true;
-            this.title.BackColor = System.Drawing.Color.Transparent;
-            this.title.Font = new System.Drawing.Font("Lucida Calligraphy", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.ForeColor = System.Drawing.Color.White;
-            this.title.Location = new System.Drawing.Point(526, 4);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(348, 36);
-            this.title.TabIndex = 16;
-            this.title.Text = "Time Table Generator";
-            // 
             // templateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1400, 630);
+            this.ClientSize = new System.Drawing.Size(1600, 700);
             this.Controls.Add(this.topPanelMover);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
