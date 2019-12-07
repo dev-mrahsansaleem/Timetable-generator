@@ -110,26 +110,26 @@ namespace TimeTableGenerator
                 currentRoomNo++;
             }            
         }
-
+        // insert button
         public void btnInsert_Click(object sender, EventArgs e)
         {
-            if (txtNumberofrooms.Text.Trim() != "")
+            if (txtNumberofrooms.Text.Trim() != "")                //validating room number
             {
                 try
                 {
                     maxRoomCap = Convert.ToInt32(txtNumberofrooms.Text.Trim());
                     if (maxRoomCap > 0 && maxRoomCap < 100)
                     {
-                        className = TBclassName.Text.Trim();
+                        className = TBclassName.Text.Trim();          //validating class name
                         if (className != "")
                         {
                             try
                             {
-                                startTime = Convert.ToInt32(CBstartTime.Text.Trim());
+                                startTime = Convert.ToInt32(CBstartTime.Text.Trim());     //validating start time
                                 try
                                 {
-                                    endTime = Convert.ToInt32(CBendTime.Text.Trim());
-                                    if (startTime < endTime)
+                                    endTime = Convert.ToInt32(CBendTime.Text.Trim());    
+                                    if (startTime < endTime)                             // validating end time
                                     {
                                         cClassData mydata = new cClassData();//create a object
                                         mydata.ClassName = className;
@@ -210,7 +210,7 @@ namespace TimeTableGenerator
 
         public void btnGenerate_Click(object sender, EventArgs e)
         {
-            if (txtNumberofrooms.Text.Trim() != "")
+            if (txtNumberofrooms.Text.Trim() != "")         // validating room number while generationg optimal time table
             {
                 try
                 {
