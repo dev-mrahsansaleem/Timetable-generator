@@ -34,3 +34,14 @@ C:\Users\CODER\Desktop\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTable
 C:\Users\CODER\Desktop\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Template.templateForm.resources
 C:\Users\CODER\Desktop\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Time_Table.resources
 C:\Users\CODER\Desktop\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.csproj.GenerateResource.Cache
+D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.exe.config
+D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.exe
+D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.pdb
+D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.exe
+D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.pdb
+D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.csprojResolveAssemblyReference.cache
+D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Edit.resources
+D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Properties.Resources.resources
+D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Template.templateForm.resources
+D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Time_Table.resources
+D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.csproj.GenerateResource.Cache

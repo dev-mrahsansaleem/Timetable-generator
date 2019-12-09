@@ -244,8 +244,9 @@ namespace TimeTableGenerator
             {
                 string filename = "";
                 OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Title = "Open CSV File";
-                dialog.Filter = "CSV Files (*.csv)|*.csv";
+                dialog.Title = "Open csv and txt  File";
+                //dialog.Filter = "CSV Files (*.txt)|*.txt";
+                //dialog.Filter = "CSV Files (*.csv)|*.csv";
                 dialog.ShowDialog();
                 filename = dialog.FileName;
                 TBFileName.Text = filename;
@@ -283,6 +284,11 @@ namespace TimeTableGenerator
             {
                 MessageBox.Show("Error while opening CSV file...!!!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void TBclassName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
