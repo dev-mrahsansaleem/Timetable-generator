@@ -45,3 +45,17 @@ D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\obj\Debu
 D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Template.templateForm.resources
 D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Time_Table.resources
 D:\git hub\Timetable-generator C#\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.csproj.GenerateResource.Cache
+=======
+C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.exe.config
+C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.exe
+C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\bin\Debug\TimeTableGenerator.pdb
+C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.csprojAssemblyReference.cache
+C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Edit.resources
+C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Properties.Resources.resources
+C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Template.templateForm.resources
+C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.Time_Table.resources
+C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.csproj.GenerateResource.cache
+C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.csproj.CoreCompileInputs.cache
+C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.exe
+C:\Users\Rida Rehman\Documents\GitHub\Timetable-generator\TimeTableGenerator\TimeTableGenerator\obj\Debug\TimeTableGenerator.pdb
+>>>>>>> 82d75b65f3274aa8cf4595af9ece138b99b1b771

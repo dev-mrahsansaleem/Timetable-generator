@@ -110,26 +110,26 @@ namespace TimeTableGenerator
                 currentRoomNo++;
             }            
         }
-
+        // insert button
         public void btnInsert_Click(object sender, EventArgs e)
         {
-            if (txtNumberofrooms.Text.Trim() != "")
+            if (txtNumberofrooms.Text.Trim() != "")                //validating room number
             {
                 try
                 {
                     maxRoomCap = Convert.ToInt32(txtNumberofrooms.Text.Trim());
                     if (maxRoomCap > 0 && maxRoomCap < 100)
                     {
-                        className = TBclassName.Text.Trim();
+                        className = TBclassName.Text.Trim();          //validating class name
                         if (className != "")
                         {
                             try
                             {
-                                startTime = Convert.ToInt32(CBstartTime.Text.Trim());
+                                startTime = Convert.ToInt32(CBstartTime.Text.Trim());     //validating start time
                                 try
                                 {
-                                    endTime = Convert.ToInt32(CBendTime.Text.Trim());
-                                    if (startTime < endTime)
+                                    endTime = Convert.ToInt32(CBendTime.Text.Trim());    
+                                    if (startTime < endTime)                             // validating end time
                                     {
                                         cClassData mydata = new cClassData();//create a object
                                         mydata.ClassName = className;
@@ -210,7 +210,7 @@ namespace TimeTableGenerator
 
         public void btnGenerate_Click(object sender, EventArgs e)
         {
-            if (txtNumberofrooms.Text.Trim() != "")
+            if (txtNumberofrooms.Text.Trim() != "")         // validating room number while generationg optimal time table
             {
                 try
                 {
@@ -286,9 +286,50 @@ namespace TimeTableGenerator
             }
         }
 
-        private void TBclassName_TextChanged(object sender, EventArgs e)
+        public void WriteCSV<T>(IEnumerable<T> items,string path)
+        {
+            Type itemType = typeof(T);
+            var props = itemType.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance).OrderBy(p => p.Name);
+            using (var writer = new StreamWriter(path))
+            {
+                writer.WriteLine(string.Join(", ", props.Select(p => p.Name)));
+
+                foreach(var item in items)
+                {
+                    writer.WriteLine(string.Join(", ", props.Select(p => p.GetValue(item, null))));
+                }
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
         {
 
+            if (txtNumberofrooms.Text.Trim() != "")         // validating room number while generationg optimal time table
+            {
+                try
+                {
+                    string filePath = @"D:\git hub\Timetable-generator C#\Print.csv";
+                    maxRoomCap = Convert.ToInt32(txtNumberofrooms.Text.Trim());
+                    GenerateOptimalSelectedClass(classStore);
+                    showInputClass();
+
+                    if (File.Exists(filePath))
+                    {
+                        File.Delete(filePath);
+                    }
+
+                    WriteCSV(classStore, filePath);
+                    MessageBox.Show(@"D:\git hub\Timetable-generator C#\Print.csv", "File genrated successfuly at:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Number of rooms must be numaric values", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter maximum number of rooms available...!!!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

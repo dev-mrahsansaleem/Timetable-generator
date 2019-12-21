@@ -44,6 +44,7 @@
             this.CBstartTime = new System.Windows.Forms.ComboBox();
             this.txtNumberofrooms = new System.Windows.Forms.TextBox();
             this.btnInsert = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.DGVinputData = new System.Windows.Forms.DataGridView();
             this.Sr_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -85,7 +86,6 @@
             this.TBclassName.Name = "TBclassName";
             this.TBclassName.Size = new System.Drawing.Size(200, 31);
             this.TBclassName.TabIndex = 4;
-            this.TBclassName.TextChanged += new System.EventHandler(this.TBclassName_TextChanged);
             // 
             // label3
             // 
@@ -159,7 +159,7 @@
             this.btnGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerate.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGenerate.Location = new System.Drawing.Point(236, 563);
+            this.btnGenerate.Location = new System.Drawing.Point(84, 563);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(212, 58);
             this.btnGenerate.TabIndex = 9;
@@ -179,6 +179,7 @@
             this.inputPanel.Controls.Add(this.CBstartTime);
             this.inputPanel.Controls.Add(this.txtNumberofrooms);
             this.inputPanel.Controls.Add(this.btnInsert);
+            this.inputPanel.Controls.Add(this.btnPrint);
             this.inputPanel.Controls.Add(this.btnGenerate);
             this.inputPanel.Controls.Add(this.label1);
             this.inputPanel.Controls.Add(this.label4);
@@ -321,6 +322,21 @@
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.DarkRed;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnPrint.Location = new System.Drawing.Point(384, 563);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(212, 58);
+            this.btnPrint.TabIndex = 9;
+            this.btnPrint.Text = "Create CSV File";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // DGVinputData
             // 
             this.DGVinputData.BackgroundColor = System.Drawing.Color.Black;
@@ -402,5 +418,6 @@
         private System.Windows.Forms.TextBox TBFileName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnPrint;
     }
 }
